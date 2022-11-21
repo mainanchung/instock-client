@@ -1,0 +1,33 @@
+.warehouse {
+    box-sizing: border-box;
+    max-width: 400px;
+    &__icon-title{
+        display: flex;
+    }
+
+    &__title-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__about{
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        box-sizing: border-box;
+    }
+    &__address{
+        width: 600px;
+    }
+
+    &__address,
+    &__contact-name,
+    &__contact-information{
+        justify-content: flex-start;
+    }
+
+    h3, p{
+        display: flex;
+    }
+    
+}
