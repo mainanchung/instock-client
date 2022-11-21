@@ -18,7 +18,7 @@ function App() {
             element = {<InventoriesPage/>}
           />
           <Route
-            path = '/inventories/:id'
+            path = '/inventory/:id'
             element = {<InventoryItemPage/>}
           />
           <Route
@@ -26,7 +26,7 @@ function App() {
             element = {<WareHousesPage/>}
           />
           <Route
-            path= '/warehouse'
+            path= '/warehouse/:id'
             element = {<WareHousePage/>}
           />
         </Routes>
