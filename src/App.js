@@ -1,6 +1,6 @@
-import './App.css';
-
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import './App.scss';
+import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
+// import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import InventoriesPage from './Pages/InventoriesPage/InventoriesPage';
 
 
@@ -8,7 +8,7 @@ import InventoriesPage from './Pages/InventoriesPage/InventoriesPage';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Header />
         <Routes>
           <Route
@@ -32,8 +32,8 @@ function App() {
             element = {<WareHousePage/>}
           />
         </Routes>
-      </BrowserRouter>
-
+      </BrowserRouter> */}
+      <EditWarehouse />
     </div>
   );
 }

@@ -1,0 +1,33 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.edit-warehouse {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: red;
+    margin: 1rem;
+    padding: 1.25rem;
+    &__container {
+        display: flex;
+    }
+    &__content-container {
+        display: flex;
+        flex-direction: column;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        padding: .25rem;
+        border-radius: 1.25rem;
+    }
+
+    &__btn {
+        @include mobile-primaryBtn
+    }
+}
+
+
+// mobile-primaryBtn
