@@ -19,7 +19,7 @@
 }
 
 //Button-table_desck
-@mixin table_desck-primaryBtn{
+@mixin table_desck-primaryBtn {
   font-family: 'Titillium Web';
   font-style: normal;
   font-weight: 600;
@@ -31,7 +31,7 @@
   border-radius: 20px;
 }
 
-@mixin table_desck-secondaryBtn{
+@mixin table_desck-secondaryBtn {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -47,7 +47,7 @@
   border-radius: 20px; 
 }
 
-@mixin table_desck-deleteBtn{
+@mixin table_desck-deleteBtn {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -65,7 +65,7 @@
 
 //Button-mobile 
 
-@mixin mobile-primaryBtn{
+@mixin mobile-primaryBtn {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -80,7 +80,7 @@
   border-radius: 20px;
 }
 
-@mixin mobile-secondaryBtn{
+@mixin mobile-secondaryBtn {
   font-family: 'Titillium Web';
   font-style: normal;
   font-weight: 600;
@@ -95,7 +95,7 @@
   border-radius: 20px; 
 }
 
-@mixin mobile-deleteBtn{
+@mixin mobile-deleteBtn {
   display: flex;
   flex-direction: row;
   align-items: center;

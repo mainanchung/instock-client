@@ -1,13 +1,13 @@
-import './App.css';
-
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import './App.scss';
+import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
+// import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        {/* <Header /> */}
+      {/* <BrowserRouter>
+        <Header />
         <Routes>
           <Route
             path = '/inventory'
@@ -30,8 +30,8 @@ function App() {
             element = {<WareHousePage/>}
           />
         </Routes>
-      </BrowserRouter>
-
+      </BrowserRouter> */}
+      <EditWarehouse />
     </div>
   );
 }
