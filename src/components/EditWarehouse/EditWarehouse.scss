@@ -13,11 +13,28 @@ body {
     margin: 1rem;
     padding: 1.25rem;
 
+    @include desktop {
+        max-width: 63.75rem;
+        margin: auto;
+        margin-top: 1rem;
+        // display: flex;
+        // width: 100%;
+    }
+
+    &__content {
+        width: 100%;
+        margin-bottom: .5rem;
+    }
+
     &__content-container {
         display: flex;
         flex-direction: column;
         text-align: left;
+        @include tablet {
+            flex-direction: row;
+        }
     }
+
     &__form-list, &__form-item {
         display: flex;
         flex-direction: column;
@@ -28,17 +45,21 @@ body {
     }
     &__heading-container {
         display: flex;
-        margin: .25rem 0 1.25rem;
-        align-items: flex-end
+        align-items: flex-end;
+        // border specific styling
+        border-bottom: solid $Cloud 0.1rem;
+        margin: 0 -1.25rem;
     }
     &__heading-img {
         height: 100%;
-        margin-bottom: .45rem;
+        margin-bottom: 1.45rem;
         margin-right: .35rem;
+        margin-left: 1rem;
     }
     &__heading { 
         font-size: 1.75rem;
         margin: 0;
+        margin-bottom: 1rem;
     }
 
     &__subheading {
@@ -51,17 +72,23 @@ body {
     }
 
     &__input {
-        padding: .5rem;
-        border: $Cloud solid .1rem;
+        padding: .5rem 1rem;
+        border: solid $Cloud .1rem;
         border-radius: 1.25rem;
     }
 
     &__hr {
         background-color: $Cloud;
-        border: none;
-        height: 0.0625rem;
-        width: calc(100% + 2.375rem); 
-        margin: 0 -1.25rem;
+        @include onlyShowsOnMobile{
+            border: none;
+            height: 0.1rem;
+            width: calc(100% + 2.375rem); 
+            margin: 0 -1.25rem;
+        }
+        @include tablet {
+            border: solid $Cloud 0.05rem;
+            margin: 2rem;
+        }
     }
 
     &__btn-container {
@@ -72,6 +99,9 @@ body {
         padding: 1.25rem;
         border-radius: 0 0 0.1875rem 0.1875rem;
         justify-content: space-between;
+        @include tablet {
+            justify-content: right;
+        }
     }
 
     &__save {
@@ -80,11 +110,18 @@ body {
         justify-content: center;
         width: 8.75rem;
         font-size: 0.8125rem;
+        @include tablet {
+            width: auto;
+            margin-left: 1rem;
+        }
     }
     &__cancel {
         @include mobile-secondaryBtn;
         justify-content: center;
         width: 8.75rem;
         font-size: 0.8125rem;
+        @include tablet {
+            width: 5rem;
+        }
     }
 }

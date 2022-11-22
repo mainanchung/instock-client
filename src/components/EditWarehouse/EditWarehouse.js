@@ -9,8 +9,8 @@ const EditWarehouse = () => {
                     <img className="edit-warehouse__heading-img" src={ArrowBack} alt="arrow-back" />
                     <h1 className="edit-warehouse__heading">Edit Warehouse</h1>
                 </div>
+                {/* <hr className="edit-warehouse__hr" /> */}
                 <div className="edit-warehouse__content-container">
-                    <hr className="edit-warehouse__hr" />
                     <div className="edit-warehouse__content">
                         <h3 className="edit-warehouse__subheading">Warehouse Details</h3>
                         <div className="edit-warehouse__form-list">
@@ -54,11 +54,11 @@ const EditWarehouse = () => {
                         </div>
                         </div>
                     </div>
+                </div>
                     <div className="edit-warehouse__btn-container">
                         <button className="edit-warehouse__btn edit-warehouse__cancel">Cancel</button>
                         <button className="edit-warehouse__btn edit-warehouse__save">Save</button>
                     </div>
-                </div>
             </form>
         </div>
     )
