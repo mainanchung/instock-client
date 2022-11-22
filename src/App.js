@@ -1,7 +1,8 @@
 import './App.scss';
-import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
-// import {BrowserRouter, Routes, Route} from 'react-router-dom';
+// import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
 import InventoriesPage from './Pages/InventoriesPage/InventoriesPage';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
 
 
 
@@ -9,17 +10,17 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Routes>
-          <Route
+          {/* <Route
             path = '/inventory'
             element = {<InventoryPage/>}
-          />
+          /> */}
           <Route
             path = '/inventories'
             element = {<InventoriesPage/>}
           />
-          <Route
+          {/* <Route
             path = '/inventory/:id'
             element = {<InventoryItemPage/>}
           />
@@ -30,10 +31,10 @@ function App() {
           <Route
             path= '/warehouse/:id'
             element = {<WareHousePage/>}
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
-      <EditWarehouse />
+      {/* <EditWarehouse /> */}
     </div>
   );
 }
