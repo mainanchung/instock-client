@@ -8,7 +8,7 @@ import InventoriesPage from './Pages/InventoriesPage/InventoriesPage';
 function App() {
   return (
     <div className="App">
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Header />
         <Routes>
           <Route
@@ -32,7 +32,7 @@ function App() {
             element = {<WareHousePage/>}
           />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
       <EditWarehouse />
     </div>
   );
