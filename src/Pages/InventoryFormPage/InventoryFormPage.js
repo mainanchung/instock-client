@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import "../InventoriesPage/InventoriesPage.scss";  
+import "./InventoriesPage.scss";  
 
 const InventoriesPage = () => {
 
