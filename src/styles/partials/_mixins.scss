@@ -13,7 +13,7 @@
 }
 
 @mixin onlyShowsOnMobile {
-  @media screen and (min-width: $mobile) and (max-width: 767px){
+  @media screen and (min-width: $mobile-breakpoint) and (max-width: 767px){
     @content;
   }
 }
