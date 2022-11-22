@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import "./InventoriesPage.scss";  
+import "./InventoryFormPage.scss";  
 
-const InventoriesPage = () => {
+const InventoryFormPage = () => {
 
 
 
@@ -16,4 +16,4 @@ const InventoriesPage = () => {
 
 }
 
-export default InventoriesPage;
+export default InventoryFormPage;
