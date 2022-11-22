@@ -1,6 +1,8 @@
 import './App.css';
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import InventoriesPage from './Pages/InventoriesPage/InventoriesPage';
+
 
 
 function App() {
