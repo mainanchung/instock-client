@@ -2,6 +2,13 @@ import './EditWarehouse.scss'
 import ArrowBack from '../../Assets/Icons/arrow_back-24px.svg'
 
 const EditWarehouse = () => {
+
+    // Connect to backend
+    // https://dev.to/deboragaleano/how-to-handle-multiple-inputs-in-react-55el
+
+    
+
+
     return (
         <div className="edit-warehouse">
             <form className="edit-warehouse__form">
@@ -16,7 +23,7 @@ const EditWarehouse = () => {
                         <div className="edit-warehouse__form-list">
                             <div className="edit-warehouse__form-item">
                                 <label className="edit-warehouse__label" htmlFor="">Warehouse Name</label>
-                                <input className="edit-warehouse__input" type="text" placeholder="ex. Washington"/>
+                                <input className="edit-warehouse__input" type="text" placeholder="ex. Washington" v/>
                             </div>
                             <div className="edit-warehouse__form-item">
                                 <label className="edit-warehouse__label" htmlFor="">Street Address</label>
