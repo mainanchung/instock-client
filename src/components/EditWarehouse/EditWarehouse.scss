@@ -2,29 +2,73 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+body {
+    background-color: black;
+}
+
 .edit-warehouse {
-    background-color: red;
+    background-color: white;
+    border-radius: .1875rem;
     margin: 1rem;
     padding: 1.25rem;
-    &__container {
+
+    &__heading-container {
         display: flex;
+        // width: 100%;
     }
     &__content-container {
         display: flex;
         flex-direction: column;
+        text-align: left;
     }
-    &__item {
+    &__form-list, &__form-item {
         display: flex;
         flex-direction: column;
     }
 
+    &__form-item {
+        margin-bottom: 1rem;
+    }
+    &__heading { 
+        
+    }
+
+    &__subheading {
+
+    }
+
+    &__label {
+        font-weight: bold;
+    }
+
     &__input {
-        padding: .25rem;
+        padding: .5rem;
+        border: $Cloud solid .1rem;
         border-radius: 1.25rem;
     }
 
+    &__hr {
+        background-color: $Cloud;
+        border: none;
+        height: 0.0625rem;
+        width: calc(100% + 2.375rem); 
+        margin: 0 -1.25rem;
+    }
+
+    &__btn-container {
+        background-color: $Light-Grey;
+        display: flex;
+        margin: -1rem;
+        margin-top: 1rem;
+        padding: 1.25rem;
+        justify-content: space-between;
+    }
+
     &__btn {
-        @include mobile-primaryBtn
+        @include mobile-primaryBtn;
+        border: none;
+        text-align: center;
+        width: 8.75rem;
     }
 }
 
