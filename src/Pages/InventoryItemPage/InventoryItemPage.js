@@ -9,7 +9,7 @@ const InventoryItemPage = () => {
     return (
 
         <div>
-
+            <p>testing</p>
         </div>
 
     )
