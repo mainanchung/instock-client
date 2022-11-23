@@ -50,7 +50,7 @@ const InventoriesPage = () => {
                         <div className='inventory__content--left'>
                             <div className='inventory__content--item'>
                                 <h4 className='inventory__subtitle--mobile'>INVENTORY ITEM</h4>
-                                <p className='inventory__item-text'>Television<img src={arrow}/></p> 
+                                 <NavLink className='inventory__item-text--link'><p className='inventory__item-text'>Television<img src={arrow}/></p> </NavLink>
                             </div>
                             <div className='inventory__content--category'>
                                 <h4 className='inventory__subtitle--mobile'>CATEGORY</h4>
@@ -86,7 +86,7 @@ const InventoriesPage = () => {
                         <div className='inventory__content--left'>
                             <div className='inventory__content--item'>
                                 <h4 className=' inventory__subtitle--mobile'>INVENTORY ITEM</h4>
-                                <p className='inventory__item-text'>Television<img src={arrow}/></p>
+                                <NavLink className='inventory__item-text--link'><p className='inventory__item-text'>Television<img src={arrow}/></p> </NavLink>
                             </div>
 
                             <div className='inventory__content--category'>

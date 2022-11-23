@@ -1,6 +1,7 @@
 import './App.scss';
 // import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
 import InventoriesPage from './Pages/InventoriesPage/InventoriesPage';
+import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
@@ -20,11 +21,11 @@ function App() {
             path = '/inventories'
             element = {<InventoriesPage/>}
           />
-          {/* <Route
+          <Route
             path = '/inventory/:id'
             element = {<InventoryItemPage/>}
           />
-          <Route
+          {/* <Route
             path = '/warehouses'
             element = {<WareHousesPage/>}
           />
