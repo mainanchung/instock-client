@@ -1,7 +1,7 @@
 import './App.scss';
 // import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import { WarehousePage } from './Pages/WareHousePage/WareHousePage'
+import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
 import WareHousesPage from './Pages/WareHousesPage/WareHousesPage';
 
 function App() {
