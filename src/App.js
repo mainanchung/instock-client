@@ -2,6 +2,7 @@ import './App.scss';
 // import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
+import { DeleteModal } from './components/DeleteModal/DeleteModal';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      <DeleteModal />
       {/* <EditWarehouse />  */}
 
     </div>
