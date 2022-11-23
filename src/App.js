@@ -3,13 +3,16 @@ import './App.scss';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
 
+
 function App() {
   return (
     <div className="App">
+
      <BrowserRouter>
         {/* <Header /> */}
         <Routes>
           {/* <Route
+
             path = '/inventory'
             element = {<InventoryPage/>}
           />
@@ -24,6 +27,7 @@ function App() {
           <Route
             path = '/warehouses'
             element = {<WareHousesPage/>}
+
           /> */}
           <Route
             path= '/warehouse/:id'
@@ -32,6 +36,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <EditWarehouse />  */}
+
     </div>
   );
 }

@@ -32,3 +32,4 @@ const WarehousePage = () => {
     }
 }
 export { WarehousePage }
+
