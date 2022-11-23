@@ -78,6 +78,10 @@ body {
         border-radius: 1.25rem;
     }
 
+    &__input--error {
+        border-color:red!important;
+    }
+
     &__hr {
         background-color: $Cloud;
         @include onlyShowsOnMobile{
