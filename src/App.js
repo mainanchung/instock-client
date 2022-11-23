@@ -1,10 +1,9 @@
 import './App.scss';
-// import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
-import InventoriesPage from './Pages/InventoriesPage/InventoriesPage';
-import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
+import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
+import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
+import {InventoriesPage } from './Pages/InventoriesPage/InventoriesPage';
 
 
 function App() {
@@ -13,10 +12,7 @@ function App() {
       <BrowserRouter>
         {/* <Header /> */}
         <Routes>
-          {/* <Route
-            path = '/inventory'
-            element = {<InventoryPage/>}
-          /> */}
+         
           <Route
             path = '/inventories'
             element = {<InventoriesPage/>}
@@ -28,14 +24,16 @@ function App() {
           {/* <Route
             path = '/warehouses'
             element = {<WareHousesPage/>}
-          />
+
+          /> */}
           <Route
             path= '/warehouse/:id'
             element = {<WareHousePage/>}
-          /> */}
+          /> 
         </Routes>
       </BrowserRouter>
-      {/* <EditWarehouse /> */}
+      <EditWarehouse />
+      <AddWarehouse />
     </div>
   );
 }
