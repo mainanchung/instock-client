@@ -76,17 +76,16 @@
             margin-right:2rem ;
             } 
 
-            @include tablet{
+            @include desktop{
                 width: 50%;
+                margin-right:0;
             }
-
         }
 
         &--right{
             @include tablet{
             padding-left:3rem ;
             border-left: 1px $Cloud solid;}
-
         }
     }
 

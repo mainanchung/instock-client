@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
 import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
-import {InventoriesPage } from './Pages/InventoriesPage/InventoriesPage';
+import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
+import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
           /> */}
           <Route
             path= '/warehouse/:id'
-            element = {<WareHousePage/>}
+            element = {<WarehousePage/>}
           /> 
         </Routes>
       </BrowserRouter>
