@@ -22,54 +22,54 @@ const InventoriesPage = () => {
                 </div>      
 
                 <div className='inventory__subtitle--desk_tablet'>
-                    <div className='inventory__subtitle--box'>
-                        <h4 className='inventory__subtitle--text'>INVENTORY ITEM</h4>
-                        <img src={sortIcon} alt='sort_logo'/>
+                    <div className='inventory__subtitle--box-item'>
+                        <h4 className='inventory__subtitle--text'>INVENTORY ITEM<img className='inventory__subtitle--img' src={sortIcon} alt='sort_logo'/></h4>
                     </div>
-                    <div className='inventory__subtitle--box'>
-                        <h4 className='inventory__subtitle--text'>CATEGORY</h4>
-                        <img src={sortIcon} alt='sort_logo'/>
+                    <div className='inventory__subtitle--box-category'>
+                        <h4 className='inventory__subtitle--text'>CATEGORY<img className='inventory__subtitle--img' src={sortIcon} alt='sort_logo'/></h4> 
                     </div>
-                    <div className='inventory__subtitle--box'>
-                        <h4 className='inventory__subtitle--text'>STATUS</h4>
-                        <img src={sortIcon} alt='sort_logo'/>
+                    <div className='inventory__subtitle--box-status'>
+                        <h4 className='inventory__subtitle--text'>STATUS <img className='inventory__subtitle--img' src={sortIcon} alt='sort_logo'/></h4>
                     </div>
-                    <div className='inventory__subtitle--box'>
-                        <h4 className='inventory__subtitle--text'>QTY</h4>
-                        <img src={sortIcon} alt='sort_logo'/>
+                    <div className='inventory__subtitle--box-qty'>
+                        <h4 className='inventory__subtitle--text'>QTY<img className='inventory__subtitle--img' src={sortIcon} alt='sort_logo'/></h4>
+                        
                     </div>
-                    <div className='inventory__subtitle--box'>
-                        <h4 className='inventory__subtitle--text'>WAREHOUSE</h4>
-                        <img src={sortIcon} alt='sort_logo'/>
+                    <div className='inventory__subtitle--box-warehouse'>
+                        <h4 className='inventory__subtitle--text'>WAREHOUSE<img className='inventory__subtitle--img' src={sortIcon} alt='sort_logo'/></h4>
+                        
                     </div>
+
+                    <h4 className='inventory__subtitle--text inventory__subtitle--text-action'>ACTIONS</h4>
+                    
                 
                 </div>  
                 <div className='inventory__list'>
                     <div className='inventory__content'>
 
                         <div className='inventory__content--left'>
-                            <div className='inventory__item'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>INVENTORY ITEM</h4>
-                                <p className='inventory__item-text'>Television<span><img src={arrow}/></span></p> 
+                            <div className='inventory__content--item'>
+                                <h4 className='inventory__subtitle--mobile'>INVENTORY ITEM</h4>
+                                <p className='inventory__item-text'>Television<img src={arrow}/></p> 
                             </div>
-                            <div className='inventory__category'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>CATEGORY</h4>
+                            <div className='inventory__content--category'>
+                                <h4 className='inventory__subtitle--mobile'>CATEGORY</h4>
                                 <p className='inventory__category-text'>Electronics</p>
                             </div>
                         </div>
 
                         <div className='inventory__content--right'>
-                            <div className='inventory__status'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>STATUS</h4>
+                            <div className='inventory__content--status'>
+                                <h4 className='inventory__subtitle--mobile'>STATUS</h4>
                                 <p className='inventory__status--valid'>IN STOCK</p>
                             </div>
-                            <div className='inventory__qty'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>QTY</h4>
+                            <div className='inventory__content--qty'>
+                                <h4 className='inventory__subtitle--mobile'>QTY</h4>
                                 <p className='inventory__qty-text'>500</p>
                             </div>
 
-                            <div className='inventory__warehouse'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>QTY</h4>
+                            <div className='inventory__content--warehouse'>
+                                <h4 className='inventory__subtitle--mobile'>QTY</h4>
                                 <p className='inventory__warehouse-text'>Manhattan</p>
                             </div>
                     </div>
@@ -84,28 +84,29 @@ const InventoriesPage = () => {
                     <div className='inventory__content'>
 
                         <div className='inventory__content--left'>
-                            <div className='inventory__item'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>INVENTORY ITEM</h4>
-                                <p className='inventory__item-text'>Television <span><img src={arrow}/></span></p>
+                            <div className='inventory__content--item'>
+                                <h4 className=' inventory__subtitle--mobile'>INVENTORY ITEM</h4>
+                                <p className='inventory__item-text'>Television<img src={arrow}/></p>
                             </div>
-                            <div className='inventory__category'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>CATEGORY</h4>
+
+                            <div className='inventory__content--category'>
+                                <h4 className='inventory__subtitle--mobile'>CATEGORY</h4>
                                 <p className='inventory__category-text'>Electronics</p>
                             </div>
                         </div>
 
                         <div className='inventory__content--right'>
-                            <div className='inventory__status'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>STATUS</h4>
+                            <div className='inventory__content--status'>
+                                <h4 className='inventory__subtitle--mobile'>STATUS</h4>
                                 <p className='inventory__status--invalid'>OUT OF STOCK</p>
                             </div>
-                            <div className='inventory__qty'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>QTY</h4>
+                            <div className='inventory__content--qty'>
+                                <h4 className='inventory__subtitle--mobile'>QTY</h4>
                                 <p className='inventory__qty-text'>500</p>
                             </div>
 
-                            <div className='inventory__warehouse'>
-                                <h4 className='inventory__subtitle--text inventory__subtitle--mobile'>QTY</h4>
+                            <div className='inventory__content--warehouse'>
+                                <h4 className='inventory__subtitle--mobile'>QTY</h4>
                                 <p className='inventory__warehouse-text'>Manhattan</p>
                             </div>
                         </div>

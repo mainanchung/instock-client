@@ -6,16 +6,25 @@
     background:$White;
     margin: 1rem;
 
+    @include tablet{
+        margin: 2rem
+    }
+
     &__container{
     background:$White;
     box-shadow: 0px 2px 5px 0px #13182C1A;
     border-radius: 3px;
     text-align: left;
-    padding:1rem 0;
+    padding-top:1rem ;
 
     @include tablet{
-        padding:2rem 0;
+        margin:4rem auto ;
+        padding-top:2rem ;
         }
+    }
+    @include desktop{
+        margin:4rem auto ;
+       width: 63.75rem;
     }
     
     &__top{
@@ -26,6 +35,7 @@
         @include tablet{
         flex-direction: row;
         justify-content: space-between;
+        padding:1rem 2rem;
         }
     }
 
@@ -34,6 +44,11 @@
         font-size: 1.75rem;
         color: $Instock-Black;
         margin-top: 0.5rem;
+        @include tablet{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2rem;
+        }
     }
 
     &__function{
@@ -63,7 +78,21 @@
             background:$White;
             border: 1px solid $Cloud;
             border-radius: 20px;
-            padding: 0.5rem;
+            background-image: url('../../Assets/Icons/search-24px.svg');
+            background-repeat: no-repeat;
+            background-position: 95%;
+            padding: 1rem 1rem 1rem 1rem;
+
+            @include tablet{
+            background-position: 94%;
+            padding: 1rem 1rem 1rem 1rem;
+            width: 11.6rem;
+            margin: 1rem;
+            }
+
+            @include desktop{
+                width: 17rem;
+            }
 
             &::placeholder{
                 font-family: 'Titillium Web';
@@ -76,21 +105,98 @@
     &__list{
         display: flex;
         flex-direction: column;
-        border-top: 1px $Cloud solid;
+        border-bottom: 1px $Cloud solid;
         padding: 1rem;
-
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+            padding:1rem 2rem;
+        }
     }
     &__content{
         display: flex;
         flex-direction: row;
 
+        @include tablet{
+            width: 100%;
+            align-items: center;
+        }
+
+        &--item{
+            @include tablet{
+                width: 10rem;
+            }
+            @include desktop{
+                width: 15rem;
+            }
+        }
+        &--category{
+            @include tablet{
+                width: 8rem;
+            }
+            @include desktop{
+                width: 12rem;
+            }
+        }
+        &--status{
+            @include tablet{
+                width:8rem;
+            }
+            @include desktop{
+                width: 11rem;
+            }
+        }
+        &--qty{
+            @include tablet{
+                width: 4rem;
+            }
+            @include desktop{
+                width: 6rem;
+            }
+        }
+        &--warehouse{
+            @include tablet{
+                width: 6rem;
+            }
+            @include desktop{
+                width: 9rem;
+            }
+        }
+
         &--left{
-            width: 9rem;
+            width: 50vw;
+
+            @include tablet{
+                width:18rem;
+                display: flex;
+                align-items: center;
+            }
+
+            @include desktop{
+                width: 90%;
+            }
+        }
+
+
+        &--right{
+            @include tablet{
+                display: flex;
+                align-items: center;
+            }
+            @include desktop{
+                width: 100%;
+            }
         }
 
         &--btn{
             display: flex;
             justify-content: space-between;
+
+            &-delete{
+                @include tablet{
+                    margin: 0 0.8rem;
+                }
+            }
         }    
     }
 
@@ -99,17 +205,71 @@
         font-size: 0.813rem;
         color: $Slate;
         margin-bottom: 0%;
+        @include tablet{
+            display: none;
+        }
     }
     &__subtitle--desk_tablet{
         display: none;
+        align-items: center;
 
         @include tablet{
             display: flex;
+            background-color: $Light-Grey;
+            font-weight: 600;
+            font-size: 12px;
+            color: $Slate;
+            padding: 0 2rem;
+            position: relative;
         }
+
     }
+    
 
     &__subtitle--box{
         display: flex;
+
+        &-item{
+            width: 10rem;
+            @include desktop{
+                width: 15rem;
+            }
+        }
+        &-category{
+            width: 8rem;
+            @include desktop{
+                width: 12rem;
+            }
+        }
+        &-status{
+            width:8rem;
+            @include desktop{
+                width: 11rem;
+            }
+        }
+        &-qty{
+            width: 4rem;
+            @include desktop{
+                width: 6rem;
+            }
+        }
+        &-warehouse{
+            width: 9.5rem;
+        }
+    }
+
+    &__subtitle--text{
+        @include tablet{
+        display: flex;
+        align-items: center;
+
+      }
+
+      &-action{
+        @include tablet{
+        right:2rem;    
+        position: absolute;}
+      }
     }
 
     &__item-text{
@@ -117,15 +277,23 @@
         font-weight: 600;
         font-size: 0.813rem;
         display: flex;
-        align-items: flex-start;
-        margin-bottom: -0.4rem;
+        align-items: center;
+        color: #2E66E5;
+        margin-top: 0.4rem;
+        margin-bottom: 1.5rem;
+        @include tablet{
+            margin: 0 ;   
+        }
     }
 
     &__category-text,&__qty-text, &__warehouse-text{
         font-weight: 400;
         font-size: 0.813rem;
         color: $Instock-Black;
-        margin-top: 0%;
+        margin-top:0.3rem;
+        @include tablet{
+            margin: 0;
+        }
     }
 
     &__status--invalid{
@@ -141,6 +309,10 @@
         font-size: 0.813rem;
         color: $Red;
         margin-top: 0.5rem;
+        @include tablet{
+            margin: 0;
+            width: 5.75rem;
+        }
     }
 
     &__status--valid{
@@ -156,6 +328,10 @@
         font-size: 0.813rem;
         color: $Green;
         margin-top: 0.5rem;
+        @include tablet{
+            margin: 0;
+            width: 4rem;
+        }
     }
 }
 
