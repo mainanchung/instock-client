@@ -30,6 +30,11 @@
         @include tablet{
             width:44rem;
         } 
+
+        @include desktop{
+            margin:4rem auto ;
+           width: 63.75rem;
+        }
     }
 
     &__subtitle{
@@ -44,6 +49,10 @@
         font-size: 0.813rem;
         color: $Instock-Black;
         margin: 0.3rem 0 0.8rem 0;
+
+        @include tablet{
+            font-size: 0.875rem;
+        }
     }
 
     &__about{
@@ -57,17 +66,27 @@
             flex-direction: row;
             padding: 2rem;
         }
+        @include tablet{
+            padding: 2rem 2.25rem;
+        }
 
         &--left{
             @include tablet{
             width: 40%;
             margin-right:2rem ;
             } 
+
+            @include tablet{
+                width: 50%;
+            }
+
         }
 
         &--right{
+            @include tablet{
             padding-left:3rem ;
-            border-left: 1px $Cloud solid;
+            border-left: 1px $Cloud solid;}
+
         }
     }
 
@@ -115,6 +134,9 @@
         width: 48vw;
         @include tablet{
             width:10rem;
+        }
+        @include desktop{
+            width: 15rem;
         }
     }    
 
