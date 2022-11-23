@@ -1,0 +1,119 @@
+@use './variables' as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin onlyShowsOnMobile {
+  @media screen and (min-width: $mobile) and (max-width: 767px){
+    @content;
+  }
+}
+
+//Button-table_desck
+@mixin table_desck-primaryBtn {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: $White;
+  padding: 8px 16px;
+  background: $Instock-Indigo;
+  border-radius: 20px;
+}
+
+@mixin table_desck-secondaryBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color:$Slate;
+  padding: 8px 16px;
+  background: $White;
+  border: 1px solid $Cloud;
+  border-radius: 20px; 
+}
+
+@mixin table_desck-deleteBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color:$White;
+  padding: 8px 16px;
+  background: $Red;
+  border: 1px solid $Cloud;
+  border-radius: 20px; 
+}
+
+//Button-mobile 
+
+@mixin mobile-primaryBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color:$White;
+  padding: 8px 39px;
+  background: $Instock-Indigo;
+  border-radius: 20px;
+}
+
+@mixin mobile-secondaryBtn {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 63px;
+  background: $White;
+  border: 1px solid $Cloud;
+  border-radius: 20px; 
+}
+
+@mixin mobile-deleteBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 63px;
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color:$White;
+  background: $Red;
+  border: 1px solid $Cloud;
+  border-radius: 20px; 
+}
+
+
+
+
+
+
+
