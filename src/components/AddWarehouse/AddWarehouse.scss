@@ -6,7 +6,7 @@ body {
     background-color: white;
 }
 
-.edit-warehouse {
+.add-warehouse {
     background-color: white;
     border-radius: .1875rem;
     box-shadow: 0px 2px 5px $Instock-Black-Opacity-10;
@@ -105,7 +105,7 @@ body {
         }
     }
 
-    &__save {
+    &__add {
         @include mobile-primaryBtn;
         border: none;
         justify-content: center;

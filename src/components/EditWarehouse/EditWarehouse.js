@@ -8,24 +8,25 @@ const EditWarehouse = () => {
     // Connect to backend
     // https://dev.to/deboragaleano/how-to-handle-multiple-inputs-in-react-55el
 
-    const [warehouseValues,setWarehouseValues] = useState();
+    // const [warehouseValues,setWarehouseValues] = useState();
 
-    axios.get('http://localhost:8080/warehouse/')
-        .then(res => {
-            // const editWarehouseValues = {
-            //     // id: (useparams)
-            //     warehouse_name: res.warehouse_name
-            //     // address: ,
-            //     // city: ,
-            //     // country: ,
-            //     // contact_name: ,
-            //     // contact_position: ,
-            //     // contact_phone: ,
-            //     // contact_email:
-            // };
-            // setWarehouseValues(res.warehouse_name)
-            console.log(res.data)
-        })
+    // axios.get('http://localhost:8080/warehouse/');
+    //     .then(res => {
+    //         res.find()
+    //         // const editWarehouseValues = {
+    //         //     // id: (useparams)
+    //         //     warehouse_name: res.data.warehouse_name
+    //         //     // address: ,
+    //         //     // city: ,
+    //         //     // country: ,
+    //         //     // contact_name: ,
+    //         //     // contact_position: ,
+    //         //     // contact_phone: ,
+    //         //     // contact_email:
+    //         // };
+    //         setWarehouseValues(editWarehouseValues.warehouse_name)
+    //         console.log(res.data)
+    //     })
     
 
 
@@ -43,7 +44,7 @@ const EditWarehouse = () => {
                         <div className="edit-warehouse__form-list">
                             <div className="edit-warehouse__form-item">
                                 <label className="edit-warehouse__label" htmlFor="">Warehouse Name</label>
-                                <input className="edit-warehouse__input" type="text" placeholder="ex. Washington" value={warehouseValues.warehouse_name}/>
+                                <input className="edit-warehouse__input" type="text" placeholder="ex. Washington"/>
                             </div>
                             <div className="edit-warehouse__form-item">
                                 <label className="edit-warehouse__label" htmlFor="">Street Address</label>

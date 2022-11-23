@@ -1,5 +1,6 @@
 import './App.scss';
 import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
+import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
 // import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
@@ -32,6 +33,7 @@ function App() {
         </Routes>
       </BrowserRouter> */}
       <EditWarehouse />
+      <AddWarehouse />
     </div>
   );
 }
