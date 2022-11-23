@@ -13,7 +13,7 @@ const EditWarehouse = () => {
     const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
-        axios.get('http://localhost:8080/warehouse/')
+        axios.get('http://localhost:8080/warehouse/150a36cf-f38e-4f59-8e31-39974207372d')
         .then(res => {
             let data = res.data[0]
 
