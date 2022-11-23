@@ -14,7 +14,6 @@ const EditWarehouse = () => {
     useEffect(() => {
         axios.get('http://localhost:8080/warehouse/150a36cf-f38e-4f59-8e31-39974207372d')
         .then(res => {
-            // res.find()
             let data = res.data[0]
 
             const editWarehouseValues = {
@@ -29,21 +28,14 @@ const EditWarehouse = () => {
                 contact_email: data.contact_email
             };
 
-            console.log(res.data)
-
-
             setWarehouseValues(editWarehouseValues)
             setIsLoaded(true)
-            // console.log(res.data[0].warehouse_name)
-            // console.log(editWarehouseValues)
+
         }).catch((error) => {
             console.log(error)
         })
     }, [])
 
-    
-        
-    // console.log(warehouseValues)
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setWarehouseValues({
@@ -56,7 +48,6 @@ const EditWarehouse = () => {
         e.preventDefault();
         console.log(warehouseValues)
     }
-
 
     return (
         <div className="edit-warehouse">
