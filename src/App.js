@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
 
-     <BrowserRouter>
+     {/* <BrowserRouter> */}
         {/* <Header /> */}
-        <Routes>
+        {/* <Routes> */}
           {/* <Route
 
             path = '/inventory'
@@ -30,13 +30,13 @@ function App() {
             element = {<WareHousesPage/>}
 
           /> */}
-          <Route
+          {/* <Route
             path= '/warehouse/:id'
             element = {<WarehousePage/>}
           />
         </Routes>
       </BrowserRouter>
-      <EditWarehouse />
+      <EditWarehouse /> */}
       <AddWarehouse />
     </div>
   );

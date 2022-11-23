@@ -8,31 +8,43 @@ const AddWarehouse = () => {
     // Connect to backend
     // https://dev.to/deboragaleano/how-to-handle-multiple-inputs-in-react-55el
 
-    // const [warehouseValues,setWarehouseValues] = useState();
+    const [warehouseValues,setWarehouseValues] = useState({
+        id: "",
+        warehouse_name: "",
+        address: "",
+        city: "",
+        country: "",
+        contact_name: "",
+        contact_position: "",
+        contact_phone: "",
+        contact_email: ""
+    });
 
-    // axios.get('http://localhost:8080/warehouse/')
-    //     .then(res => {
-    //         // res.find()
-    //         const editWarehouseValues = {
-    //             // id: (useparams)
-    //             warehouse_name: res.data
-    //             // address: ,
-    //             // city: ,
-    //             // country: ,
-    //             // contact_name: ,
-    //             // contact_position: ,
-    //             // contact_phone: ,
-    //             // contact_email:
-    //         };
-    //         setWarehouseValues(editWarehouseValues.warehouse_name)
-    //         console.log(res.data)
-    //     })
-    
+    const [warehouseAttempt,setWarehouseAttempt] = useState(false);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setWarehouseValues({
+          ...warehouseValues,
+          [name]: value,
+        });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setWarehouseAttempt(true)
+        if (warehouseValues.warehouse_name && warehouseValues.address && warehouseValues.city && warehouseValues.country && warehouseValues.contact_name && warehouseValues.contact_position && warehouseValues.contact_phone && warehouseValues.contact_email) {
+            axios.post('http://localhost:8080/warehouse/', warehouseValues)
+        } 
+    }
+    console.log(warehouseValues)
+
 
 
     return (
         <div className="add-warehouse">
-            <form className="add-warehouse__form">
+            <form className="add-warehouse__form" onSubmit={handleSubmit}>
+            {/* <form className="add-warehouse__form"> */}
                 <div className="add-warehouse__heading-container">
                     <img className="add-warehouse__heading-img" src={ArrowBack} alt="arrow-back" />
                     <h1 className="add-warehouse__heading">Add New Warehouse</h1>
@@ -44,7 +56,7 @@ const AddWarehouse = () => {
                         <div className="add-warehouse__form-list">
                             <div className="add-warehouse__form-item">
                                 <label className="add-warehouse__label" htmlFor="">Warehouse Name</label>
-                                <input className="add-warehouse__input" type="text" placeholder="Warehouse Name"/>
+                                <input className={`add-warehouse__input ${warehouseAttempt && warehouseValues.warehouse_name === "" ? "edit-warehouse__input--error" : ""}`} placeholder="Warehouse Name" type="text" name="warehouse_name" value={warehouseValues.warehouse_name} onChange={handleInputChange}/>
                             </div>
                             <div className="add-warehouse__form-item">
                                 <label className="add-warehouse__label" htmlFor="">Street Address</label>
@@ -85,7 +97,7 @@ const AddWarehouse = () => {
                 </div>
                     <div className="add-warehouse__btn-container">
                         <button className="add-warehouse__btn add-warehouse__cancel">Cancel</button>
-                        <button className="add-warehouse__btn add-warehouse__add">+ Add Warehouse</button>
+                        <button className="add-warehouse__btn add-warehouse__add" type='submit'>+ Add Warehouse</button>
                     </div>
             </form>
         </div>
