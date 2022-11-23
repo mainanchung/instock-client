@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';  
-import '../WareHousesPage/WareHousesPage.scss';
+import '../WarehousesPage/WarehousesPage.scss';
 
 import sortIcon from '../../Assets/Icons/sort-24px.svg';
 import deleteIcon from '../../Assets/Icons/delete_outline-24px.svg';
@@ -9,7 +9,7 @@ import editIcon from '../../Assets/Icons/edit-24px.svg';
 import arrow from '../../Assets/Icons/chevron_right-24px.svg'
 
 
-const WareHousesPage = () => {
+const WarehousesPage = () => {
 
     return (
 
@@ -29,4 +29,4 @@ const WareHousesPage = () => {
 
 
 }
-export default WareHousesPage;
+export default WarehousesPage;

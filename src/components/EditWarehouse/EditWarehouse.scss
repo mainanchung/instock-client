@@ -69,12 +69,16 @@ body {
     &__label {
         font-size: 0.8125rem;
         font-weight: bold;
+        margin-bottom: .5rem;
     }
 
     &__input {
         padding: .5rem 1rem;
         border: solid $Cloud .1rem;
         border-radius: 1.25rem;
+    }
+    &__input--error {
+        border: solid red .1rem;
     }
 
     &__hr {

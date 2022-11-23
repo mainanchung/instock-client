@@ -1,4 +1,4 @@
-import "./WareHousePage.scss";
+import "./WarehousePage.scss";
 import { Warehouse } from '../../components/Warehouse/Warehouse'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';

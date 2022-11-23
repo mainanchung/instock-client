@@ -1,8 +1,9 @@
 import './App.scss';
-// import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
+import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
-import WareHousesPage from './Pages/WareHousesPage/WareHousesPage';
+import WarehousesPage from './Pages/WarehousesPage/WarehousesPage';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           /> */}
           <Route
             path = '/warehouses'
-            element = {<WareHousesPage/>}
+            element = {<WarehousesPage/>}
 
           /> 
           <Route
@@ -35,8 +36,8 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-      {/* <EditWarehouse />  */}
-
+      <EditWarehouse />
+      <AddWarehouse />
     </div>
   );
 }
