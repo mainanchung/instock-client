@@ -9,10 +9,11 @@ const EditWarehouse = () => {
     // https://dev.to/deboragaleano/how-to-handle-multiple-inputs-in-react-55el
 
     const [warehouseValues,setWarehouseValues] = useState();
+    const [warehouseAttempt,setWarehouseAttempt] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
-        axios.get('http://localhost:8080/warehouse/150a36cf-f38e-4f59-8e31-39974207372d')
+        axios.get('http://localhost:8080/warehouse/')
         .then(res => {
             let data = res.data[0]
 
@@ -36,6 +37,7 @@ const EditWarehouse = () => {
         })
     }, [])
 
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setWarehouseValues({
@@ -46,7 +48,10 @@ const EditWarehouse = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(warehouseValues)
+        setWarehouseAttempt(true)
+        if (warehouseValues.warehouse_name && warehouseValues.address && warehouseValues.city && warehouseValues.country && warehouseValues.contact_name && warehouseValues.contact_position && warehouseValues.contact_phone && warehouseValues.contact_email) {
+            axios.patch('http://localhost:8080/warehouse/150a36cf-f38e-4f59-8e31-39974207372d', warehouseValues)
+        } 
     }
 
     return (
@@ -64,19 +69,19 @@ const EditWarehouse = () => {
                                 <div className="edit-warehouse__form-list">
                                     <div className="edit-warehouse__form-item">
                                         <label className="edit-warehouse__label" htmlFor="">Warehouse Name</label>
-                                        <input className="edit-warehouse__input" type="text" name="warehouse_name" value={warehouseValues.warehouse_name} onChange={handleInputChange}/>
+                                        <input className={`edit-warehouse__input ${warehouseAttempt && warehouseValues.warehouse_name === "" ? "edit-warehouse__input--error" : ""}`} type="text" name="warehouse_name" value={warehouseValues.warehouse_name} onChange={handleInputChange}/>
                                     </div>
                                     <div className="edit-warehouse__form-item">
                                         <label className="edit-warehouse__label" htmlFor="">Street Address</label>
-                                        <input className="edit-warehouse__input" type="text" placeholder="ex. 33 Pearl Street SW" name="address" value={warehouseValues.address} onChange={handleInputChange}/>
+                                        <input className={`edit-warehouse__input ${warehouseAttempt && warehouseValues.address === "" ? "edit-warehouse__input--error" : ""}`} type="text" placeholder="ex. 33 Pearl Street SW" name="address" value={warehouseValues.address} onChange={handleInputChange}/>
                                     </div>
                                     <div className="edit-warehouse__form-item">
                                         <label className="edit-warehouse__label" htmlFor="">City</label>
-                                        <input className="edit-warehouse__input" type="text" placeholder="ex. Washington" name='city' value={warehouseValues.city} onChange={handleInputChange}/>
+                                        <input className={`edit-warehouse__input ${warehouseAttempt && warehouseValues.city === "" ? "edit-warehouse__input--error" : ""}`} type="text" placeholder="ex. Washington" name='city' value={warehouseValues.city} onChange={handleInputChange}/>
                                     </div>
                                     <div className="edit-warehouse__form-item">
                                         <label className="edit-warehouse__label" htmlFor="">Country</label>
-                                        <input className="edit-warehouse__input" type="text" placeholder="ex. USA" name='country' value={warehouseValues.country} onChange={handleInputChange}/>
+                                        <input className={`edit-warehouse__input ${warehouseAttempt && warehouseValues.country === "" ? "edit-warehouse__input--error" : ""}`} type="text" placeholder="ex. USA" name='country' value={warehouseValues.country} onChange={handleInputChange}/>
                                     </div>
                                 </div>
                             </div>
@@ -86,19 +91,19 @@ const EditWarehouse = () => {
                                 <div className="edit-warehouse__item">
                                 <div className="edit-warehouse__form-item">
                                     <label className="edit-warehouse__label" htmlFor="">Contact Name</label>
-                                    <input className="edit-warehouse__input" type="text" placeholder="ex. Graeme Lyon" name='contact_name' value={warehouseValues.contact_name} onChange={handleInputChange}/>
+                                    <input className={`edit-warehouse__input ${warehouseAttempt && warehouseValues.contact_name === "" ? "edit-warehouse__input--error" : ""}`} type="text" placeholder="ex. Graeme Lyon" name='contact_name' value={warehouseValues.contact_name} onChange={handleInputChange}/>
                                 </div>
                                 <div className="edit-warehouse__form-item">
                                     <label className="edit-warehouse__label" htmlFor="">Position</label>
-                                    <input className="edit-warehouse__input" type="text" placeholder="ex. Warehouse Manager" name='contact_position' value={warehouseValues.contact_position} onChange={handleInputChange}/>
+                                    <input className={`edit-warehouse__input ${warehouseAttempt && warehouseValues.contact_position === "" ? "edit-warehouse__input--error" : ""}`} type="text" placeholder="ex. Warehouse Manager" name='contact_position' value={warehouseValues.contact_position} onChange={handleInputChange}/>
                                 </div>
                                 <div className="edit-warehouse__form-item">
                                     <label className="edit-warehouse__label" htmlFor="">Phone Number</label>
-                                    <input className="edit-warehouse__input" type="text" placeholder="ex. +1 (647) 504-0911" name='contact_phone' value={warehouseValues.contact_phone} onChange={handleInputChange}/>
+                                    <input className={`edit-warehouse__input ${warehouseAttempt && warehouseValues.contact_phone === "" ? "edit-warehouse__input--error" : ""}`} type="text" placeholder="ex. +1 (647) 504-0911" name='contact_phone' value={warehouseValues.contact_phone} onChange={handleInputChange}/>
                                 </div>
                                 <div className="edit-warehouse__form-item">
                                     <label className="edit-warehouse__label" htmlFor="">Email</label>
-                                    <input className="edit-warehouse__input" type="text" placeholder="ex. glyon@instock.com" name='contact_email' value={warehouseValues.contact_email} onChange={handleInputChange}/>
+                                    <input className={`edit-warehouse__input ${warehouseAttempt && warehouseValues.contact_email === "" ? "edit-warehouse__input--error" : ""}`} type="text" placeholder="ex. glyon@instock.com" name='contact_email' value={warehouseValues.contact_email} onChange={handleInputChange}/>
                                 </div>
                                 </div>
                             </div>
