@@ -10,20 +10,20 @@ const AddWarehouse = () => {
 
     // const [warehouseValues,setWarehouseValues] = useState();
 
-    // axios.get('http://localhost:8080/warehouse/');
+    // axios.get('http://localhost:8080/warehouse/')
     //     .then(res => {
-    //         res.find()
-    //         // const editWarehouseValues = {
-    //         //     // id: (useparams)
-    //         //     warehouse_name: res.data.warehouse_name
-    //         //     // address: ,
-    //         //     // city: ,
-    //         //     // country: ,
-    //         //     // contact_name: ,
-    //         //     // contact_position: ,
-    //         //     // contact_phone: ,
-    //         //     // contact_email:
-    //         // };
+    //         // res.find()
+    //         const editWarehouseValues = {
+    //             // id: (useparams)
+    //             warehouse_name: res.data
+    //             // address: ,
+    //             // city: ,
+    //             // country: ,
+    //             // contact_name: ,
+    //             // contact_position: ,
+    //             // contact_phone: ,
+    //             // contact_email:
+    //         };
     //         setWarehouseValues(editWarehouseValues.warehouse_name)
     //         console.log(res.data)
     //     })
