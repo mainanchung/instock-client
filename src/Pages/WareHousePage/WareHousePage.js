@@ -1,5 +1,4 @@
-import { NavLink } from 'react-router-dom';
-import "./WarehousePage.scss";
+import "./warehousePage.scss";
 import { Warehouse } from '../../components/Warehouse/Warehouse'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -10,7 +9,8 @@ const WarehousePage = () => {
     const { id } = useParams()
     const [warehouse, setWarehouse] = useState('')
     const [isloaded, setIsLoaded] = useState(false)
-    const getWarehouse = () => {
+
+    useEffect(() => {
         axios.get(`http://localhost:8080/warehouse/${id}`)
             .then((response) => {
                 setWarehouse(response.data)
@@ -20,10 +20,6 @@ const WarehousePage = () => {
                 console.log(error)
             }
             )
-    }
-
-    useEffect(() => {
-        getWarehouse()
 
     }, [id])
 
