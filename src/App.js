@@ -3,21 +3,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
 import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
+import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
+import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
 import { DeleteModal } from './components/DeleteModal/DeleteModal';
 
 
 function App() {
   return (
     <div className="App">
-
-     <BrowserRouter>
+      <BrowserRouter>
         {/* <Header /> */}
         <Routes>
-          {/* <Route
-
-            path = '/inventory'
-            element = {<InventoryPage/>}
-          />
+         
           <Route
             path = '/inventories'
             element = {<InventoriesPage/>}
@@ -26,7 +23,7 @@ function App() {
             path = '/inventory/:id'
             element = {<InventoryItemPage/>}
           />
-          <Route
+          {/* <Route
             path = '/warehouses'
             element = {<WareHousesPage/>}
 
@@ -34,7 +31,7 @@ function App() {
           <Route
             path= '/warehouse/:id'
             element = {<WarehousePage/>}
-          />
+          /> 
         </Routes>
       </BrowserRouter>
       {/* <DeleteModal /> */}
