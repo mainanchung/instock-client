@@ -1,6 +1,7 @@
 import './App.scss';
-// import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
+import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
 import { DeleteModal } from './components/DeleteModal/DeleteModal';
 
@@ -36,9 +37,17 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      <EditWarehouse />
+      <AddWarehouse />
+      <DeleteModal />
+<<<<<<< HEAD
       <DeleteModal />
       {/* <EditWarehouse />  */}
 
+=======
+      <EditWarehouse />
+      <AddWarehouse />
+>>>>>>> development
     </div>
   );
 }
