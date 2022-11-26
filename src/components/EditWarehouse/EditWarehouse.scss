@@ -1,0 +1,131 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+body {
+    background-color: white;
+}
+
+.edit-warehouse {
+    background-color: white;
+    border-radius: .1875rem;
+    box-shadow: 0px 2px 5px $Instock-Black-Opacity-10;
+    margin: 1rem;
+    padding: 1.25rem;
+
+    @include desktop {
+        max-width: 63.75rem;
+        margin: auto;
+        margin-top: 1rem;
+        // display: flex;
+        // width: 100%;
+    }
+
+    &__content {
+        width: 100%;
+        margin-bottom: .5rem;
+    }
+
+    &__content-container {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__form-list, &__form-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-item {
+        margin-bottom: 1rem;
+    }
+    &__heading-container {
+        display: flex;
+        align-items: flex-end;
+        // border specific styling
+        border-bottom: solid $Cloud 0.1rem;
+        margin: 0 -1.25rem;
+    }
+    &__heading-img {
+        height: 100%;
+        margin-bottom: 1.45rem;
+        margin-right: .35rem;
+        margin-left: 1rem;
+    }
+    &__heading { 
+        font-size: 1.75rem;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    &__subheading {
+        font-size: 1.25rem;
+    }
+
+    &__label {
+        font-size: 0.8125rem;
+        font-weight: bold;
+        margin-bottom: .5rem;
+    }
+
+    &__input {
+        padding: .5rem 1rem;
+        border: solid $Cloud .1rem;
+        border-radius: 1.25rem;
+    }
+    &__input--error {
+        border: solid red .1rem;
+    }
+
+    &__hr {
+        background-color: $Cloud;
+        @include onlyShowsOnMobile{
+            border: none;
+            height: 0.1rem;
+            width: calc(100% + 2.375rem); 
+            margin: 0 -1.25rem;
+        }
+        @include tablet {
+            border: solid $Cloud 0.05rem;
+            margin: 2rem;
+        }
+    }
+
+    &__btn-container {
+        background-color: $Light-Grey;
+        display: flex;
+        margin: -1.25rem;
+        margin-top: 1rem;
+        padding: 1.25rem;
+        border-radius: 0 0 0.1875rem 0.1875rem;
+        justify-content: space-between;
+        @include tablet {
+            justify-content: right;
+        }
+    }
+
+    &__save {
+        @include mobile-primaryBtn;
+        border: none;
+        justify-content: center;
+        width: 8.75rem;
+        font-size: 0.8125rem;
+        @include tablet {
+            width: auto;
+            margin-left: 1rem;
+        }
+    }
+    &__cancel {
+        @include mobile-secondaryBtn;
+        justify-content: center;
+        width: 8.75rem;
+        font-size: 0.8125rem;
+        @include tablet {
+            width: 5rem;
+        }
+    }
+}
