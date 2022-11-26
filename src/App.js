@@ -5,6 +5,7 @@ import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
 import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
 import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
+import { DeleteModal } from './components/DeleteModal/DeleteModal';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           /> 
         </Routes>
       </BrowserRouter>
+      {/* <DeleteModal /> */}
       <EditWarehouse />
       <AddWarehouse />
     </div>
