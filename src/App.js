@@ -37,17 +37,9 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      <DeleteModal />
       <EditWarehouse />
       <AddWarehouse />
-      <DeleteModal />
-<<<<<<< HEAD
-      <DeleteModal />
-      {/* <EditWarehouse />  */}
-
-=======
-      <EditWarehouse />
-      <AddWarehouse />
->>>>>>> development
     </div>
   );
 }
