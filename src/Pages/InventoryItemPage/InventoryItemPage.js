@@ -1,9 +1,22 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import "../InventoryItemPage/InventoryItemPage.scss";
 import backIcon from '../../Assets/Icons/arrow_back-24px.svg'
 import editIcon from '../../Assets/Icons/edit-24px.svg'  
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const InventoryItemPage = () => {
+
+    const [singleItem, setSingleItem] = useState("")
+    const itemId = useParams()
+    console.log(itemId)
+
+    useEffect(() => {
+        axios.get(`http://localhost:8080/inventory/${itemId}`).then((response) => {
+                console.log(response.data)
+            })
+        })
+ 
 
     return (
         <>
@@ -11,7 +24,7 @@ const InventoryItemPage = () => {
         <div className="inventory-item__container">
             <div className="inventory-item__title-container">
                 <div className="inventory-item__icon-title">
-                    <img src={backIcon} />
+                <NavLink to={"/inventory"}><img src={backIcon} /></NavLink>
                     <h2>Television</h2>
                 </div>
                 <button className="inventory-item__edit-button"><img  className="inventory-item__edit-icon" src={editIcon}/><p  className="inventory-item__edit-text">Edit</p></button>
