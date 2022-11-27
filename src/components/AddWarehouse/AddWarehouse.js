@@ -53,7 +53,7 @@ const AddWarehouse = () => {
                             <div className="add-warehouse__form-item">
                                 <label className="add-warehouse__label" htmlFor="">City</label>
                                 <input className="add-warehouse__input" type="text" placeholder="City"/>
-                            </div>
+                            </div> 
                             <div className="add-warehouse__form-item">
                                 <label className="add-warehouse__label" htmlFor="">Country</label>
                                 <input className="add-warehouse__input" type="text" placeholder="Country"/>
@@ -61,6 +61,7 @@ const AddWarehouse = () => {
                         </div>
                     </div>
                     <hr className="add-warehouse__hr"/>
+                    {/*  */}
                     <div className="add-warehouse__content">
                         <h3 className="add-warehouse__subheading">Contact Details</h3>
                         <div className="add-warehouse__item">
@@ -83,6 +84,7 @@ const AddWarehouse = () => {
                         </div>
                     </div>
                 </div>
+                {/*  */}
                     <div className="add-warehouse__btn-container">
                         <button className="add-warehouse__btn add-warehouse__cancel">Cancel</button>
                         <button className="add-warehouse__btn add-warehouse__add">+ Add Warehouse</button>

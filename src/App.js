@@ -6,6 +6,7 @@ import { WarehousePage } from './Pages/WarehousePage/WarehousePage';
 import WarehousesPage from './Pages/WarehousesPage/WarehousesPage';
 import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
 import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
+import InventoryFormPage from './Pages/InventoryFormPage/InventoryFormPage';
 import { DeleteModal } from './components/DeleteModal/DeleteModal';
 
 
@@ -23,6 +24,10 @@ function App() {
           <Route
             path = '/inventory/:id'
             element = {<InventoryItemPage/>}
+          />
+          <Route 
+            path= '/InventoryFormPage'
+            element = {<InventoryFormPage />}
           />
           <Route
             path = '/warehouses'
