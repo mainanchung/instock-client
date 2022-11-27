@@ -16,12 +16,12 @@ function App() {
 
             path = '/inventory'
             element = {<InventoryPage/>}
-          /> */}
-          {/* <Route
+          />
+          <Route
             path = '/inventories'
             element = {<InventoriesPage/>}
-          /> */}
-          {/* <Route
+          />
+          <Route
             path = '/inventory/:id'
             element = {<InventoryItemPage/>}
           /> */}
