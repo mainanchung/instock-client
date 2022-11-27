@@ -7,25 +7,39 @@ import axios from 'axios';
 
 const InventoryItemPage = () => {
 
-    const [singleItem, setSingleItem] = useState("")
-    const itemId = useParams()
+    const [singleItem, setSingleItem] = useState("");
+    const [warehouseName, setWarehouseName] = useState("")
+    const itemId = useParams().id;
     console.log(itemId)
 
     useEffect(() => {
+        if(itemId){
         axios.get(`http://localhost:8080/inventory/${itemId}`).then((response) => {
                 console.log(response.data)
-            })
-        })
- 
+                setSingleItem(response.data)
+                axios.get(`http://localhost:8080/warehouse/${response.data[0].warehouse_id}`).then((response)=>{
+                    console.log(response.data[0].warehouse_name)
+                    setWarehouseName(response.data[0].warehouse_name)
+                }).catch((error)=>{
+                    console.log(error)
+                })   
+            }).catch((error)=>{
+                console.log(error)
+        })}
+    },[]) 
+    
+    
 
     return (
+        <>
+        {singleItem?
         <>
         <div className="inventory-item">
         <div className="inventory-item__container">
             <div className="inventory-item__title-container">
                 <div className="inventory-item__icon-title">
                 <NavLink to={"/inventory"}><img src={backIcon} /></NavLink>
-                    <h2>Television</h2>
+                    <h2>{singleItem[0].item_name}</h2>
                 </div>
                 <button className="inventory-item__edit-button"><img  className="inventory-item__edit-icon" src={editIcon}/><p  className="inventory-item__edit-text">Edit</p></button>
             </div>
@@ -34,11 +48,11 @@ const InventoryItemPage = () => {
                 <div className='inventory-item__about--left'> 
                     <div className="inventory-item__description">
                         <h3 className="inventory-item__subtitle">ITEM DESCRIPTION</h3>
-                        <p className="inventory-item__text">This 50", 4K LED TV provides a crystal-clear picture and vivid colors.</p>
+                        <p className="inventory-item__text">{singleItem[0].description}</p>
                     </div>
                     <div className="inventory-item__category">
                         <h3 className="inventory-item__subtitle">CATEGORY</h3>
-                        <p className="inventory-item__text">Electronics</p>
+                        <p className="inventory-item__text">{singleItem[0].category}</p>
                     </div>
                 </div>
 
@@ -46,24 +60,26 @@ const InventoryItemPage = () => {
                    <div className='inventory-item__about--top'>
                         <div className="inventory-item__status">
                             <h3 className="inventory-item__subtitle">STATUS</h3>
-                            <p className='inventory-item__status--valid'>IN STOCK</p>
-                            {/* <p className='inventory-item__status--invalid'>OUT OF STOCK</p> */}
+                            {singleItem[0].quantity !== 0?<>
+                        <p className='inventory-item__status--valid'>IN STOCK</p>
+                        </>: <> <p className='inventory-item__status--invalid'>OUT OF STOCK</p></>}
                         </div>
 
                         <div className="inventory-item__quantity">
                             <h3 className="inventory-item__subtitle">QUANTITY</h3>
-                            <p className="inventory-item__text">500</p>
+                            <p className="inventory-item__text">{singleItem[0].quantity}</p>
                         </div>
                     </div>
 
                     <div className='inventory-item__about--down'>
                         <h3 className="inventory-item__subtitle">WAREHOUSE</h3>
-                        <p className="inventory-item__text">Manhattan</p>
+                        <p className="inventory-item__text">{warehouseName}</p>
                     </div>
                 </div>
             </div>
         </div> 
         </div>  
+        </> : ""}
         </>
     )
 }
