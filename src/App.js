@@ -17,7 +17,7 @@ function App() {
         <Routes>
          
           <Route
-            path = '/inventories'
+            path = '/inventory'
             element = {<InventoriesPage/>}
           />
           <Route
@@ -34,9 +34,11 @@ function App() {
           /> 
         </Routes>
       </BrowserRouter>
-      {/* <DeleteModal />
-      <EditWarehouse /> */}
-      <AddWarehouse />
+
+      {/* <DeleteModal /> */}
+      {/* <EditWarehouse />
+      <AddWarehouse /> */}
+
     </div>
   );
 }
