@@ -1,6 +1,7 @@
 import './warehouse.scss'
 import backIcon from '../../Assets/Icons/arrow_back-24px.svg'
 import whiteEditIcon from '../../Assets/Icons/white-edit-24px.svg'
+import { NavLink } from 'react-router-dom';
 
 function Warehouse({ warehouse }) {
     const { warehouse_name, address, contact_name, contact_position,
@@ -10,9 +11,9 @@ function Warehouse({ warehouse }) {
             <div className="warehouse">
                 <div className="warehouse__title-container">
                     <div className="warehouse__icon-title">
-                        <button className="warehouse__back-button">
+                        <NavLink to="/warehouses" className="warehouse__back-button">
                         <img src={backIcon} alt="back button"/>
-                        </button>
+                        </NavLink>
                         <h2 className="warehouse__name">{warehouse_name}</h2>
                     </div>
                     <button className="warehouse__edit-button">

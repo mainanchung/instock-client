@@ -4,7 +4,6 @@ import backIcon from '../../Assets/Icons/arrow_back-24px.svg'
 import editIcon from '../../Assets/Icons/edit-24px.svg'  
 
 const InventoryItemPage = () => {
-
     return (
         <>
         <div className="inventory-item">

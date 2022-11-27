@@ -8,6 +8,7 @@ import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
 import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
 import { DeleteModal } from './components/DeleteModal/DeleteModal';
 import { EditInventoryItem } from './components/EditInventoryItem/EditInventoryItem';
+import { EditInventoryItemPage } from './Pages/EditInventoryItemPage/EditInventoryItemPage';
 
 function App() {
   return (
@@ -31,14 +32,18 @@ function App() {
           <Route
             path= '/warehouse/:id'
             element = {<WarehousePage/>}
-          /> 
+          />
+          <Route
+            path = "/warehouse/:id/edit-inventory"
+            element = {<EditInventoryItemPage/>}
+          />
         </Routes>
       </BrowserRouter>
 
       {/* <DeleteModal /> */}
       {/* <EditWarehouse />
       <AddWarehouse /> */}
-      <EditInventoryItem />
+      {/* <EditInventoryItem /> */}
 
     </div>
   );

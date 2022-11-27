@@ -22,7 +22,6 @@ function DeleteModal() {
                         <button onSubmit={deleteHandler} className="button__delete">Delete</button>
                     </div>
                 </div>
-
             </div>
         </div>
     )
