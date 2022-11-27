@@ -4,7 +4,7 @@ import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
 import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
 import { DeleteModal } from './components/DeleteModal/DeleteModal';
-
+import { EditInventoryItem } from './components/EditInventoryItem/EditInventoryItem';
 
 function App() {
   return (
@@ -38,8 +38,9 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <DeleteModal /> */}
-      <EditWarehouse />
-      <AddWarehouse />
+      {/* <EditWarehouse />
+      <AddWarehouse /> */}
+      <EditInventoryItem />
     </div>
   );
 }
