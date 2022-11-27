@@ -8,7 +8,6 @@ import InventoryList from '../../components/InventoryList/InventoryList';
 
 const InventoriesPage = () => {
     const [inventories, setInventories] = useState([])
-    // const {itemId} = useParams()
 
     useEffect(()=>{
         axios.get('http://localhost:8080/inventory').then((response)=>{
