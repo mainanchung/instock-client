@@ -37,6 +37,10 @@ function App() {
             path= '/warehouse/:id'
             element = {<WarehousePage/>}
           /> 
+          <Route
+            path= '/addWarehouse'
+            element = {<AddWarehouse/>}
+          />
         </Routes>
       </BrowserRouter>
 
