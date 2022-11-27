@@ -43,7 +43,6 @@ function App() {
       {/* <DeleteModal /> */}
       {/* <EditWarehouse />
       <AddWarehouse /> */}
-      {/* <EditInventoryItem /> */}
 
     </div>
   );

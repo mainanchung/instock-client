@@ -6,9 +6,13 @@
 
     &__header-container{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         border-bottom: 1px solid $Cloud;
+        padding-left: 1rem;
 
+        @include tablet{
+            padding-left: 2.25rem;
+        }
     }
     &__header {
         font-size: 28px;
@@ -27,19 +31,42 @@
     select{
         background-color:$White;
     }
+
+    @include tablet{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__top-container{
+        padding: 0 1.5rem;
+        @include tablet{
+            display: flex;
+            padding: 2rem 1.5rem;
+            gap: 3rem;
+        }
+    }
+
+    &__title{
+        @include tablet{
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+    }
+
     &__label{
         font-weight: 800;
+        padding: 1rem 0 .2rem;
     }
 
     &__details-container{
         display: flex;
         flex-direction: column;
-        margin: 0 1.5rem 1.5rem 1.5rem;
         align-items: flex-start;
-    }
-
-    &__buttons-container{
-        background-color:$Light-Grey;
+        padding-bottom: 1rem;
+        
+        @include tablet{
+            width: 40%;
+        }
     }
 
     &__availability-container{
@@ -47,13 +74,20 @@
         flex-direction: column;
         align-items: flex-start;
         border-top: 1px solid $Cloud;
-        margin: 0 1.5rem 1.5rem 1.5rem;
+        padding-bottom: 1rem;
+        
+        @include tablet{
+            border-top: none;
+            width: 40%;
+            padding-left: 4rem;
+            border-left: 1px solid $Cloud;
+        }
     }
 
     &__radio-container{
         display: flex;
-        justify-content: space-between;
         width: 100%;
+        gap: 4rem;
     }
 
     &__description{
@@ -72,6 +106,7 @@
         border-radius:20px;
         border: 1px solid $Cloud;
         padding-left: 1rem;
+
     }
 
     &__buttons-container{
@@ -79,11 +114,22 @@
         display: flex;
         justify-content: space-evenly;
         padding: 1rem 0;
+        background-color:$Light-Grey;
+
         
+        @include tablet{
+            justify-content: flex-end;
+            gap: 1rem;
+            padding-right: 1rem;
+        }
         button{
             width: 40%;
             height: 2rem;
             border-radius: 20px;
+
+            @include tablet{
+                width: 4.5rem;
+            }
         }
 
     }
@@ -98,5 +144,8 @@
         background-color: $Instock-Indigo;
     }
 
+}
 
+.empty {
+    visibility: hidden;
 }

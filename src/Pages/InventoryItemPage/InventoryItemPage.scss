@@ -9,15 +9,16 @@
     
     &__icon-title{
         display: flex;
-        align-items: center;
+        align-items: baseline;
         @include tablet{
             padding: 0;
         }
         h2{
             font-weight: 600;
             font-size: 1.75rem;
-            color: #13182C;
+            color:$Instock-Black;
             @include tablet{
+                margin-left: 0.5rem;
                 font-weight: 600;
                 font-size: 2rem; }
         }
@@ -87,6 +88,10 @@
             padding-left:3rem ;
             border-left: 1px $Cloud solid;}
         }
+    }
+
+    &__description{
+        max-width: 92%;
     }
 
     &__about--top{
