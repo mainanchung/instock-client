@@ -1,23 +1,21 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
-import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
-import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
+import { EditWarehouse } from './components/EditWarehouse/EditWarehouse';
+import { AddWarehouse } from './components/AddWarehouse/AddWarehouse';
+import { WarehousePage } from './Pages/WarehousePage/WarehousePage';
+import WarehousesPage from './Pages/WarehousesPage/WarehousesPage';
+import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
+import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
 import { DeleteModal } from './components/DeleteModal/DeleteModal';
 import { EditInventoryItem } from './components/EditInventoryItem/EditInventoryItem';
 
 function App() {
   return (
     <div className="App">
-
-     <BrowserRouter>
+      <BrowserRouter>
         {/* <Header /> */}
         <Routes>
-          {/* <Route
-
-            path = '/inventory'
-            element = {<InventoryPage/>}
-          />
+         
           <Route
             path = '/inventories'
             element = {<InventoriesPage/>}
@@ -28,19 +26,20 @@ function App() {
           />
           <Route
             path = '/warehouses'
-            element = {<WareHousesPage/>}
-
-          /> */}
+            element = {<WarehousesPage/>}
+          /> 
           <Route
             path= '/warehouse/:id'
             element = {<WarehousePage/>}
-          />
+          /> 
         </Routes>
       </BrowserRouter>
+
       {/* <DeleteModal /> */}
       {/* <EditWarehouse />
       <AddWarehouse /> */}
       <EditInventoryItem />
+
     </div>
   );
 }

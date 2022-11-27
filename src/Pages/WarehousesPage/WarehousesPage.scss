@@ -1,0 +1,108 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/font' as *;
+
+
+
+
+.warehouses{
+    background:$White;
+    margin:1rem;
+
+        @include tablet{
+        // margin: 2rem;
+         }
+
+
+    &__container{
+        background:$White;
+        box-shadow: 0px 2px 5px 0px #13182C1A;
+        border-radius: 3px;
+        text-align: left;
+        padding-top:1rem ;
+
+        @include tablet{
+            margin:4rem auto ;
+            padding-top:2rem ;
+            
+        }
+        @include desktop{
+           margin:4rem auto ;
+           width: 63.75rem;
+        }
+        
+    }
+
+    &__top{
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem 1.5rem 1rem;
+        // padding: 0 16px 24px 16px; 
+
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+            padding:1rem 2rem;
+            }
+    }
+
+    &__title{
+        font-weight: 600;
+        font-size: 1.75rem;
+        color: $Instock-Black;
+        margin-top: 0.5rem;
+
+    }
+
+    &__function{
+        display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            flex-direction: row;
+            height: 45px;
+            padding-top: 18px;
+        }
+
+        &--click{
+            padding: .59375rem 1rem;
+            border: solid #BDC5D5 .1rem;
+            border-radius: 1.25rem; 
+            font-weight: 500;
+            font-size:1.125rem;
+           
+        }
+
+        &--search{
+
+            @include desktop{
+                width: 17.1875rem; 
+            }
+        }
+
+        &--btn{
+            background: #2E66E5;
+            border: none;
+            color: #FFFFFF; 
+            margin-top: 1rem;
+
+            @include tablet{
+                margin-top:0rem; 
+                margin-left: 1rem;
+            }
+
+        }
+    }  
+
+    &__list{
+        display:flex;
+        flex-direction: column;
+    }
+    &__content{
+        display:flex;
+        justify-content: space-between;
+    }
+
+
+
+}
