@@ -1,8 +1,9 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
-import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
-import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
+import { EditWarehouse } from './components/EditWarehouse/EditWarehouse';
+import { AddWarehouse } from './components/AddWarehouse/AddWarehouse';
+import { WarehousePage } from './Pages/WarehousePage/WarehousePage';
+import WarehousesPage from './Pages/WarehousesPage/WarehousesPage';
 import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
 import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
 import { DeleteModal } from './components/DeleteModal/DeleteModal';
@@ -23,20 +24,21 @@ function App() {
             path = '/inventory/:id'
             element = {<InventoryItemPage/>}
           />
-          {/* <Route
+          <Route
             path = '/warehouses'
-            element = {<WareHousesPage/>}
-
-          /> */}
+            element = {<WarehousesPage/>}
+          /> 
           <Route
             path= '/warehouse/:id'
             element = {<WarehousePage/>}
           /> 
         </Routes>
       </BrowserRouter>
+
       {/* <DeleteModal /> */}
       {/* <EditWarehouse />
       <AddWarehouse /> */}
+
     </div>
   );
 }
