@@ -45,7 +45,7 @@ const WarehousesPage = () => {
         let sortWarehouse 
         // console.log("test")
         if (sortOrder) {
-            sortWarehouse = warehouseList.sort((a, b) => a[sortField].localeCompare(b[sortField]))
+            sortWarehouse = warehouseList.sort((a, b) => a[sortField].localeCompare(b[sortField])) // localeCompare for alphatical compare
         } else {
             sortWarehouse = warehouseList.sort((a, b) => b[sortField].localeCompare(a[sortField]))
         }
