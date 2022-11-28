@@ -43,7 +43,7 @@ function App() {
             element = {<EditInventoryItemPage/>}
           /> 
           <Route
-            path= '/addWarehouse'
+            path= '/add-warehouse'
             element = {<AddWarehouse/>}
           />
         </Routes>
