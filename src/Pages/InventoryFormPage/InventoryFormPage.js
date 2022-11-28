@@ -33,7 +33,7 @@ const InventoryFormPage = () => {
         // console.log(status.current.value)
         // console.log(quantity.current.value)
         // console.log(warehouse.current.value)
-        let clickStock = formRef.current.quantity.value;
+        let clickStock = clickRef.current.quantity.value;
         if (clickRef.current.status.value === "Out of stock"){
             clickStock= 0; 
         }
