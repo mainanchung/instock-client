@@ -12,6 +12,8 @@ const InventoryFormPage = () => {
     const [form, setForm] = useState([]);
     const [warehouses, setWarehouses] = useState([]);
     // const [categories, setCategories] = useState([])
+
+    const clickRef = useRef();
     const warehouse_id = useRef();
     const item_name = useRef(); 
     const description = useRef();
@@ -22,7 +24,7 @@ const InventoryFormPage = () => {
 
     //useParams
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const createInventoryItem = (e) => {
         e.preventDefault();
@@ -31,6 +33,11 @@ const InventoryFormPage = () => {
         // console.log(status.current.value)
         // console.log(quantity.current.value)
         // console.log(warehouse.current.value)
+        let clickStock = formRef.current.quantity.value;
+        if (clickRef.current.status.value === "Out of stock"){
+            clickStock= 0; 
+        }
+
         let newInventoryItem = {
             //set uuid
             warehouse_id: warehouse_id.current.value,
