@@ -35,8 +35,8 @@ function App() {
             element = {<WarehousePage/>}
           />
         </Routes>
-      </BrowserRouter>
-      <EditWarehouse /> */}
+        </BrowserRouter> */}
+      {/* <EditWarehouse /> */}
       <AddWarehouse />
     </div>
   );
