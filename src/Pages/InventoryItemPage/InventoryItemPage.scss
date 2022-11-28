@@ -17,8 +17,8 @@
             font-weight: 600;
             font-size: 1.75rem;
             color:$Instock-Black;
+            margin-left: 0.5rem;
             @include tablet{
-                margin-left: 0.5rem;
                 font-weight: 600;
                 font-size: 2rem; }
         }
@@ -29,11 +29,12 @@
         border-radius: 3px;
         text-align: left;
         @include tablet{
+            margin:4rem auto ;
             width:44rem;
         } 
 
         @include desktop{
-            margin:4rem auto ;
+           
            width: 63.75rem;
         }
     }
