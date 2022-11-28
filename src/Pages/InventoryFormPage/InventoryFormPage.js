@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import {useRef, useState, useEffect} from 'react';
 // import { useEffect} from 'react';
@@ -42,7 +42,7 @@ const InventoryFormPage = () => {
         }
         console.log(newInventoryItem); 
         axios.post('http://localhost:8080/inventory', newInventoryItem).then ((res) =>{
-            console.log(res.data)
+            // console.log(res.data)
             //set it to what it is, but adding a new
             setForm([...form, res.data]);
             }).catch((error) => {
