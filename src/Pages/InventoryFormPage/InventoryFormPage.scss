@@ -1,3 +1,7 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/font' as *;
+
 .inventory-app{
 
     background-color: white;
@@ -30,9 +34,16 @@
         text-align: left;
     }
 
+    &__label{
+        font-size: 0.8125rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
     &__form-item{
         display:flex;
         flex-direction: column;
+        margin-bottom: 1rem;
     }
 
     &__presence{
@@ -45,6 +56,123 @@
 
     &__stock{
         display:flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        gap: 3.125rem; 
     }
+
+    &__input, &__scrolling{
+        padding: 0.5rem 1rem;
+        border: solid #BDC5D5 0.1rem;
+        border-radius: 1.25rem;
+    }
+
+    &__scrolling{
+        color: #707683;
+    }
+
+    &__hr{
+        border: none;
+        height: 0.1rem;
+        width: calc(100% + 2.375rem);
+        margin: 0 -1.25rem;
+        background-color: #BDC5D5;
+
+        @include tablet{
+         /* border: solid #BDC5D5 0.05rem; */
+            margin: 2rem 2rem 0 2rem;
+            width: 0.05rem;
+            border: none;
+            height: 348px;
+        }
+    }
+
+    &__sub-container{
+        display:flex;
+        flex-direction: column;
+
+        @include tablet{
+            display:flex; 
+            flex-direction: row;
+            // justify-content: center; 
+
+            // 327.167px
+        }
+    }
+
+    &__input--height{
+        padding-bottom: 6.25rem;
+    }
+
+    &__content{
+        @include tablet{
+            width: 100%;
+            // margin-bottom: 0.5rem;
+        }
+    }
+
+    &__btn-container{
+        background-color: #F7F8F9;
+        display: flex;
+        margin: -1.25rem;
+        margin-top: 1rem;
+        padding: 1.25rem;
+        border-radius: 0 0 0.1875rem 0.1875rem;
+        justify-content: space-between;
+
+        @include tablet{
+            justify-content: right;
+            margin-top: 0;
+        }
+    }
+
+    &__cancel{
+        font-family: "Titillium Web";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 63px;
+        background: #FFFFFF;
+        border: 1px solid #BDC5D5;
+        border-radius: 20px;
+        justify-content: center;
+        width: 8.75rem;
+        font-size: 0.8125rem;
+
+        @include tablet{
+            width: 5rem;
+        }
+    }
+
+    &__add{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-family: "Titillium Web";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+        color: #FFFFFF;
+        padding: 8px 39px;
+        background: #2E66E5;
+        border-radius: 20px;
+        justify-content: center;
+        border: none;
+        border: none;
+        justify-content: center;
+        width: 8.75rem;
+        font-size: 0.8125rem;
+
+        @include tablet{
+            width: auto;
+            margin-left: 1rem;
+        }
+    }
+    
+
+    
 }
