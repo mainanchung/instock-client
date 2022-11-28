@@ -1,4 +1,5 @@
 import './AddWarehouse.scss'
+import { NavLink } from 'react-router-dom';
 import ArrowBack from '../../Assets/Icons/arrow_back-24px.svg'
 import axios from 'axios';
 import { useState } from 'react';
@@ -105,7 +106,9 @@ const AddWarehouse = () => {
                 </div>
                 {/*  */}
                     <div className="add-warehouse__btn-container">
-                        <button className="add-warehouse__btn add-warehouse__cancel">Cancel</button>
+                        <NavLink to ='/warehouses'>
+                            <button className="add-warehouse__btn add-warehouse__cancel">Cancel</button>
+                        </NavLink>
                         <button className="add-warehouse__btn add-warehouse__add" type='submit'>+ Add Warehouse</button>
                     </div>
             </form>
