@@ -27,7 +27,9 @@ const InventoriesPage = () => {
                     <h1 className='inventory__title'>Inventory</h1>
                         <div className='inventory__function'>
                             <input className='inventory__function--search' type="search" id="search" name="search" placeholder='Search...'/>
-                            <button  className='inventory__function--btn'>+ Add New Item</button>
+                            <NavLink to ='/InventoryFormPage'>
+                                <button  className='inventory__function--btn'>+ Add New Item</button>
+                            </NavLink>
                         </div>
                 </div>      
 

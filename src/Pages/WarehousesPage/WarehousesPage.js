@@ -40,8 +40,10 @@ const WarehousesPage = () => {
                     <div className='warehouses__function'>
                             <input className='warehouses__function--click warehouses__function--search' 
                             type="search" id="search" name="search" placeholder='Search...'/>
-                            <button  className='warehouses__function--click 
-                            warehouses__function--btn'>+ Add New Warehouse</button>
+                            {/* <NavLink className='warehouses__link' to ='/addWarehouse'> */}
+                                <button  className='warehouses__function--click 
+                                warehouses__function--btn'>+ Add New Warehouse</button>
+                            {/* </NavLink> */}
                     </div>
                 </div>
                 {
@@ -51,7 +53,14 @@ const WarehousesPage = () => {
                     return(
                         // <NavLink to= {`/${change.id}`} key={change.id}/>  
                         <div className= "warehouses__center">
-                            {/* I should a div wwith the main */}
+                            {/* <div className = "warehouse__center--header"> 
+                            
+                            <div className = "warehouse__center--left"></div>
+                            <div className = "warehouse__center--right"></div>
+                            
+                            
+                            </div> */}
+                            {/*  */}
                             <div className="warehouses__list">
 
                                 <div className= "warehouses__content">
@@ -59,7 +68,10 @@ const WarehousesPage = () => {
                                     <div className="warehouses__content--location">
                                         <div className="warehouses__content--where">
                                             <h4 className=' warehouses__subtitle--mobile'>WAREHOUSE</h4>
-                                            <p className='warehouses__item-text'>{change.city}<img src={arrow}/></p>
+                                            {/* <NavLink className='warehouses__link' to ='/addWarehouse'> */}
+                                                <p className='warehouses__item-text'>{change.city}
+                                                <img src={arrow}/></p>
+                                            {/* </NavLink> */}
                                         </div>
                                         <div className="warehouses__contect--address">
                                             <h4 className='warehouses__subtitle--mobile'>ADDRESS</h4>
@@ -70,10 +82,11 @@ const WarehousesPage = () => {
                                     <div className="warehouses__content--contact">
                                         <div className='warehouses__content--contact-person'>
                                             <h4 className='warehouses__subtitle--mobile'>CONTACT NAME</h4>
-                                            <p className='warehouses__status--invalid'>{change.contact_name}</p>
+                                            <p className='warehouses__status--name'>{change.contact_name}</p>
                                         </div>
                                         <div className='warehouses__content--contact-info'>
-                                            <h4 className='warehouses__subtitle--mobile'>{change.contact_phone}</h4>
+                                            <h4 className='warehouses__subtitle--mobile warehouses__subtitle--adjust'>CONTACT INFORMATION</h4>
+                                            <h4 className='warehouses__subtitle--mobile-number'>{change.contact_phone}</h4>
                                             <p className='warehouses__qty-text'>{change.contact_email}</p>
                                         </div>
                                     </div>
