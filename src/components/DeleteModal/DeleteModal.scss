@@ -2,6 +2,7 @@
 @use '../../styles/partials/mixins' as *;
 
 .delete {
+
     @include tablet {
         background-color: rgba(0, 0, 0, 0.75);
         width: 100%;
@@ -19,6 +20,7 @@
 }
 
 .delete-container {
+    position: fixed;
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem;
