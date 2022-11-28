@@ -11,7 +11,7 @@ const InventoryFormPage = () => {
 
     const [form, setForm] = useState([]);
     const [warehouses, setWarehouses] = useState([]);
-    const [categories, setCategories] = useState([])
+    // const [categories, setCategories] = useState([])
     const warehouse_id = useRef();
     const item_name = useRef(); 
     const description = useRef();
@@ -41,19 +41,21 @@ const InventoryFormPage = () => {
             status: status.current.value
         }
         console.log(newInventoryItem); 
-        // axios.post('http://localhost:8080/inventory', newInventoryItem).then ((res) =>{
-        //     console.log(res.data)
-        //     //set it to what it is, but adding a new
-        //     setForm([...form, res.data]);
-        //     }).catch((error) => {
-        //     console.log(error);
-        // })
-
-        // item_name.current.value = '';
-        // description.current.value = '';  
-        // status.current.value = '';
-        // quantity.current.value = '';
-        // warehouse.current.value = ''; 
+        axios.post('http://localhost:8080/inventory', newInventoryItem).then ((res) =>{
+            console.log(res.data)
+            //set it to what it is, but adding a new
+            setForm([...form, res.data]);
+            }).catch((error) => {
+            console.log(error);
+        })
+        warehouse_id.current.value = ''; 
+        item_name.current.value = '';
+        description.current.value = ''; 
+        category.current.value = '';
+        quantity.current.value = ''; 
+        status.current.value = '';
+        
+        
 
     }
 
@@ -66,14 +68,14 @@ const InventoryFormPage = () => {
         })
      }, [])
 
-     useEffect(() => {
-        axios.get('http://localhost:8080/inventory').then ((res) => {
-            // console.log(res.data.category)
-            setCategories(res.data)
-        }).catch((error) => {
-            console.log(error);
-        })
-     }, [])
+    //  useEffect(() => {
+    //     axios.get('http://localhost:8080/inventory').then ((res) => {
+    //         // console.log(res.data.category)
+    //         setCategories(res.data)
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     })
+    //  }, [])
     
 
 
