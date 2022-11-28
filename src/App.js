@@ -27,7 +27,7 @@ function App() {
             element = {<InventoryItemPage/>}
           />
           <Route 
-            path= '/InventoryFormPage'
+            path= '/inventory-form'
             element = {<InventoryFormPage />}
           />
           <Route
