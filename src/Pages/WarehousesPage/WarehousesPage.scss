@@ -97,12 +97,128 @@
     &__list{
         display:flex;
         flex-direction: column;
+        border-top: 1px #BDC5D5 solid;
+        padding: 1rem;
+
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
     }
     &__content{
         display:flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        flex-direction: row;
+
+        &--btn{
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
+    // &--location{
 
+    // }
+
+    &__subtitle--mobile{
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: $Slate;
+        margin-bottom: 0%;
+        margin:0; 
+
+        @include tablet{
+            display: none;
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+    }
+
+    &__subtitle--mobile-number{
+        font-weight: 100;
+        margin: 0;
+        font-size: 0.875rem;
+    }
+
+    &__qty-text{
+        margin:0; 
+    }
+
+    &__item-text{
+        font-weight: 600;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        color: #2E66E5;
+        margin-top: 0.4rem;
+        margin-bottom: 1.5rem;
+
+        @include tablet{
+            margin:0;
+        }
+    }
+
+    &__category-text, &__qty-text, 
+    &__warehouse-text {
+        /* font-weight: 400; */
+        font-size: 0.875rem;
+        color: hsl(228, 40%, 12%);
+        margin-top: 0.3rem;
+
+        @include tablet{
+            margin:0; 
+        }
+    }
+
+    &__status--name{
+        margin: 0;
+        margin-top:4px;
+        
+    }
+
+    &__content--contact-info{
+        margin-top:1.875rem;
+
+        @include tablet{
+            margin-top:0; 
+        }
+
+        @include desktop{
+            width: 18rem;
+        }
+    }
+    
+    &__subtitle--adjust{
+        margin-top: -3.5px;
+    }
+
+    &__content--location{
+        width:45vw;
+
+        @include tablet{
+            display: flex;
+            width: 19.75rem; 
+        }
+    }
+
+    &__content--contact{
+        @include tablet{
+            display: flex; 
+        }
+    }
+
+    &__content--where{
+        @include tablet{
+            width: 10rem;
+        }
+    }
+
+    &__status--name{
+        width: 12rem;
+    }
+    
 
 }

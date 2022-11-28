@@ -6,6 +6,7 @@ import { WarehousePage } from './Pages/WarehousePage/WarehousePage';
 import WarehousesPage from './Pages/WarehousesPage/WarehousesPage';
 import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
 import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
+import InventoryFormPage from './Pages/InventoryFormPage/InventoryFormPage';
 import { DeleteModal } from './components/DeleteModal/DeleteModal';
 import { EditInventoryItem } from './components/EditInventoryItem/EditInventoryItem';
 import { EditInventoryItemPage } from './Pages/EditInventoryItemPage/EditInventoryItemPage';
@@ -25,6 +26,10 @@ function App() {
             path = '/inventory/:id'
             element = {<InventoryItemPage/>}
           />
+          <Route 
+            path= '/InventoryFormPage'
+            element = {<InventoryFormPage />}
+          />
           <Route
             path = '/warehouses'
             element = {<WarehousesPage/>}
@@ -36,6 +41,10 @@ function App() {
           <Route
             path = "/warehouse/:id/edit-inventory"
             element = {<EditInventoryItemPage/>}
+          /> 
+          <Route
+            path= '/addWarehouse'
+            element = {<AddWarehouse/>}
           />
         </Routes>
       </BrowserRouter>
