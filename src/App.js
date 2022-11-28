@@ -26,7 +26,7 @@ function App() {
             element = {<InventoryItemPage/>}
           />
           <Route 
-            path= '/InventoryFormPage'
+            path= '/inventory-form'
             element = {<InventoryFormPage />}
           />
           <Route
@@ -38,7 +38,7 @@ function App() {
             element = {<WarehousePage/>}
           /> 
           <Route
-            path= '/addWarehouse'
+            path= '/add-warehouse'
             element = {<AddWarehouse/>}
           />
         </Routes>
