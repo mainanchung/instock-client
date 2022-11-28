@@ -40,10 +40,9 @@ const WarehousesPage = () => {
                     <div className='warehouses__function'>
                             <input className='warehouses__function--click warehouses__function--search' 
                             type="search" id="search" name="search" placeholder='Search...'/>
-                            {/* <NavLink className='warehouses__link' to ='/addWarehouse'> */}
-                                <button  className='warehouses__function--click 
-                                warehouses__function--btn'>+ Add New Warehouse</button>
-                            {/* </NavLink> */}
+                            <NavLink className='warehouses__link' to ='/add-warehouse'>
+                                <button  className='warehouses__function--click warehouses__function--btn'>+ Add New Warehouse</button>
+                            </NavLink>
                     </div>
                 </div>
                 {
