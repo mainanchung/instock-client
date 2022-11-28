@@ -78,6 +78,27 @@ body {
         border-radius: 1.25rem;
     }
 
+    &__input--error {
+        border-color:#C94515!important;
+    }
+
+
+    &__error {
+        display: flex;
+        color: #C94515;
+        font-size: 0.875rem;
+        align-items: center;
+    }
+
+    &__error-img {
+        margin-right: .25rem;
+        width: 1.3rem;
+    }
+
+    &__error--none {
+        display: none;
+    }
+
     &__hr {
         background-color: $Cloud;
         @include onlyShowsOnMobile{
