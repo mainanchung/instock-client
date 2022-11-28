@@ -110,7 +110,7 @@ const InventoryFormPage = () => {
                             </div>
                         <div className=''></div>
                             <div className="inventory-app__form-item">
-                                    <label className="inventory-app__label" htmlFor="">Category</label>
+                                    <label className="inventory-app__label" htmlFor="">Warehouse</label>
                                     <select name="category" ref={warehouse}>
                                         <option value="Manhattan" selected>Manhattan</option>
                                         <option value="Washington">Washington</option>
