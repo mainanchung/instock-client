@@ -31,7 +31,9 @@ return(
                 <div className='inventory__content--left'>
                     <div className='inventory__content--item'>
                         <h4 className='inventory__subtitle--mobile'>INVENTORY ITEM</h4>
-                        <NavLink to={'/inventory/'+ id} className='inventory__item-text--link'><p className='inventory__item-text'>{item_name}<img src={arrow} alt='arrow'/></p> </NavLink>
+                        <NavLink to={'/inventory/'+ id} className='inventory__item-text--link'>
+                            <p className='inventory__item-text'>{item_name}<img src={arrow} alt='arrow'/></p> 
+                        </NavLink>
                     </div>
                     <div className='inventory__content--category'>
                         <h4 className='inventory__subtitle--mobile'>CATEGORY</h4>
