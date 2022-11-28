@@ -325,6 +325,7 @@
         color: $Red;
         margin-top: 0.5rem;
         width: 5.3rem;
+        text-transform: uppercase;
         @include tablet{
             margin: 0;
             width: 5.75rem;
@@ -344,6 +345,7 @@
         font-size: 0.813rem;
         color: $Green;
         margin-top: 0.5rem;
+        text-transform: uppercase;
         @include tablet{
             margin: 0;
             width: 4rem;
