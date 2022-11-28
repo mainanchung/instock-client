@@ -4,21 +4,20 @@ import backIcon from '../../Assets/Icons/arrow_back-24px.svg'
 import editIcon from '../../Assets/Icons/edit-24px.svg'  
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { EditInventoryItem } from '../../components/EditInventoryItem/EditInventoryItem';
 
 const InventoryItemPage = () => {
 
     const [singleItem, setSingleItem] = useState("");
     const [warehouseName, setWarehouseName] = useState("")
     const itemId = useParams().id;
-    console.log(itemId)
+    const [editItem, setEditItem] = useState(false)
 
     useEffect(() => {
         if(itemId){
         axios.get(`http://localhost:8080/inventory/${itemId}`).then((response) => {
-                console.log(response.data)
                 setSingleItem(response.data)
                 axios.get(`http://localhost:8080/warehouse/${response.data[0].warehouse_id}`).then((response)=>{
-                    console.log(response.data[0].warehouse_name)
                     setWarehouseName(response.data[0].warehouse_name)
                 }).catch((error)=>{
                     console.log(error)
@@ -26,10 +25,14 @@ const InventoryItemPage = () => {
             }).catch((error)=>{
                 console.log(error)
         })}
-    },[]) 
+    },[singleItem]) 
     
+    const handleEdit = (e) => {
+        e.preventDefault();
+        setEditItem(true)
+    }
     
-
+    if(!editItem){
     return (
         <>
         {singleItem?
@@ -38,10 +41,10 @@ const InventoryItemPage = () => {
         <div className="inventory-item__container">
             <div className="inventory-item__title-container">
                 <div className="inventory-item__icon-title">
-                <NavLink to={"/inventory"}><img src={backIcon} /></NavLink>
+                <NavLink to={"/inventories"}><img src={backIcon} /></NavLink>
                     <h2>{singleItem[0].item_name}</h2>
                 </div>
-                <button className="inventory-item__edit-button"><img  className="inventory-item__edit-icon" src={editIcon}/><p  className="inventory-item__edit-text">Edit</p></button>
+                <button onClick={handleEdit} className="inventory-item__edit-button"><img  className="inventory-item__edit-icon" src={editIcon}/><p  className="inventory-item__edit-text">Edit</p></button>
             </div>
         
             <div className="inventory-item__about">    
@@ -81,7 +84,14 @@ const InventoryItemPage = () => {
         </div>  
         </> : ""}
         </>
-    )
+    )}
+    if(editItem){
+        return(
+            <>
+            <EditInventoryItem setEditItem={setEditItem} singleItem={singleItem}/>
+            </>
+        )
+    }
 }
 
 export default InventoryItemPage;
