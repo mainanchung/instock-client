@@ -2,7 +2,6 @@
 @use '../../styles/partials/mixins' as *;
 
 .delete {
-
     @include tablet {
         background-color: rgba(0, 0, 0, 0.75);
         width: 100%;
