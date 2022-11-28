@@ -60,12 +60,18 @@
             align-items: center
             }
 
+        &--link{
+            text-decoration: none;
+        }    
+
         &--btn{
             @include mobile-primaryBtn;
             justify-content: center;
+            width: 100%;
             border: none;
             font-size: 0.813rem;
             margin-top: 1rem;
+            text-decoration: none;
 
             @include tablet{
                 @include table_desck-primaryBtn;

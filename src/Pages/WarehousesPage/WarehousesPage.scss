@@ -74,23 +74,43 @@
         }
 
         &--search{
+            height: 2.25rem;
+            background:$White;
+            border: 1px solid $Cloud;
+            border-radius: 20px;
+            background-image: url('../../Assets/Icons/search-24px.svg');
+            background-repeat: no-repeat;
+            background-position: 95%;
+            padding: 1rem 1rem 1rem 1rem;
 
-            @include desktop{
-                width: 17.1875rem; 
+            @include tablet{
+            background-position: 94%;
+            padding: 1rem 1rem 1rem 1rem;
+            width: 11.6rem;
             }
-        }
+            @include desktop{
+                width: 17rem;
+            }
+            &::placeholder{
+                font-family: 'Titillium Web';
+                font-weight: 400;
+                font-size: 0.813rem;
+            }
+        } 
 
         &--btn{
+            @include mobile-primaryBtn;
             background: #2E66E5;
+            width: 100%;
             border: none;
             color: #FFFFFF; 
             margin-top: 1rem;
 
             @include tablet{
+                @include table_desck-primaryBtn;
                 margin-top:0rem; 
                 margin-left: 1rem;
             }
-
         }
     }  
 
@@ -155,6 +175,11 @@
         color: #2E66E5;
         margin-top: 0.4rem;
         margin-bottom: 1.5rem;
+        img{transition: transform 0.2s;}
+        
+        &:hover{
+            img{transform: translateX(4px);}
+        }
 
         @include tablet{
             margin:0;
