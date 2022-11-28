@@ -1,0 +1,178 @@
+@use '../../styles/partials/font' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.inventory-item {
+    box-sizing: border-box;
+    background:$White;
+    margin: 1rem;
+    
+    &__icon-title{
+        display: flex;
+        align-items: baseline;
+        @include tablet{
+            padding: 0;
+        }
+        h2{
+            font-weight: 600;
+            font-size: 1.75rem;
+            color:$Instock-Black;
+            @include tablet{
+                margin-left: 0.5rem;
+                font-weight: 600;
+                font-size: 2rem; }
+        }
+    }
+    &__container{
+        background:$White;
+        box-shadow: 0px 2px 5px 0px #13182C1A;
+        border-radius: 3px;
+        text-align: left;
+        @include tablet{
+            width:44rem;
+        } 
+
+        @include desktop{
+            margin:4rem auto ;
+           width: 63.75rem;
+        }
+    }
+
+    &__subtitle{
+        font-weight: 600;
+        font-size: 0.813rem;
+        color: $Slate;
+        margin-bottom: 0%;
+    }
+
+    &__text{
+        font-weight: 400;
+        font-size: 0.813rem;
+        color: $Instock-Black;
+        margin: 0.3rem 0 0.8rem 0;
+
+        @include tablet{
+            font-size: 0.875rem;
+        }
+    }
+
+    &__about{
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px $Cloud solid;
+
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            padding: 2rem;
+        }
+        @include tablet{
+            padding: 2rem 2.25rem;
+        }
+
+        &--left{
+            @include tablet{
+            width: 40%;
+            margin-right:2rem ;
+            } 
+
+            @include desktop{
+                width: 50%;
+                margin-right:0;
+            }
+        }
+
+        &--right{
+            @include tablet{
+            padding-left:3rem ;
+            border-left: 1px $Cloud solid;}
+        }
+    }
+
+    &__description{
+        max-width: 92%;
+    }
+
+    &__about--top{
+        display: flex;
+    }
+
+    &__title-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        @include tablet{
+            padding: 0 2.25rem;
+        }
+    }
+    &__edit-button{
+        @include mobile-primaryBtn;
+        border-radius: 50%;
+        height: 2.25rem;
+        width: 2.25rem;
+        padding: 0%;
+        
+        @include tablet{
+            @include table_desck-primaryBtn;
+            width: 5rem;
+            
+        }
+    }
+
+    &__edit-icon{
+        filter: brightness(600%) ;
+        height: 1rem;
+    }
+
+    &__edit-text{
+        display: none;
+        @include tablet{
+            display: flex;
+            margin-left: 0.3rem;
+        }
+    }
+
+    &__status{
+        width: 48vw;
+        @include tablet{
+            width:10rem;
+        }
+        @include desktop{
+            width: 15rem;
+        }
+    }    
+
+    &__status--valid  {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0.25rem 0.5rem;
+        background: rgba(21, 132, 99, 0.07);
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.813rem;
+        color: $Green;
+        margin-top: 0.5rem;
+        width: 3.8rem;
+    }
+
+    &__status--invalid  {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0.25rem 0.5rem;
+        background: rgba(201, 69, 21, 0.07);
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.813rem;
+        color: $Red;
+        margin-top: 0.5rem;
+        width: 5.3rem;
+    }  
+}

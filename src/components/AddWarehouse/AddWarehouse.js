@@ -76,6 +76,7 @@ const AddWarehouse = () => {
                         </div>
                     </div>
                     <hr className="add-warehouse__hr"/>
+                    {/*  */}
                     <div className="add-warehouse__content">
                         <h3 className="add-warehouse__subheading">Contact Details</h3>
                         <div className="add-warehouse__item">
@@ -102,6 +103,7 @@ const AddWarehouse = () => {
                         </div>
                     </div>
                 </div>
+                {/*  */}
                     <div className="add-warehouse__btn-container">
                         <button className="add-warehouse__btn add-warehouse__cancel">Cancel</button>
                         <button className="add-warehouse__btn add-warehouse__add" type='submit'>+ Add Warehouse</button>
