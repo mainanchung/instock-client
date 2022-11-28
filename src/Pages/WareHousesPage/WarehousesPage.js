@@ -14,27 +14,30 @@ const WarehousesPage = () => {
 
     const [warehouseList, setWarehouseList] = useState([])
     const [deleteModal, setDeleteModal] = useState(false)
+    const [deleteWarehouseUrl, setDeleteWarehouseUrl] = useState("")
+    const [clickedWarehouseName, setClickedWarehouseName] = useState("")
     const [deleteWarehouseId, setDeleteWarehouseId] = useState("")
     const [sortOrder, setSortOrder] = useState(true)
 
-    const handleModal = (e) => {
-        e.preventDefault()
+    const handleModal = (obj) => {
+        console.log(obj)
+        setClickedWarehouseName(obj.city)
+        setDeleteWarehouseUrl('http://localhost:8080/warehouse/' + obj.id)
         setDeleteModal(true)
-        setDeleteWarehouseId(e.target.id)
     }
 
     useEffect(() => {
         axios.get(
             `http://localhost:8080/warehouse`
         ).then((grab) => {
-            console.log(grab.data);
+            let warehouseList = grab.data;
             // displayTheList = warehouseList;
             setWarehouseList(grab.data);
         }).catch((error) => {
             console.log(`Check it over man --> ${error}`);
         })
         // keep line 26 in your mind in terms of potential errors 
-    }, [])
+    }, [warehouseList, deleteWarehouseUrl])
 
     // let displayTheList;
     // console.log(warehouseList.warehouse_name)
@@ -60,7 +63,10 @@ const WarehousesPage = () => {
             {deleteModal ?
                 <DeleteModal
                     setDeleteModal={setDeleteModal}
-                    deleteWarehouseId={deleteWarehouseId} />
+                    deleteUrl={deleteWarehouseUrl}
+                    clickedName={clickedWarehouseName}
+                    database={"warehouse"}
+                    />
                 : ""
             }
             <div className="warehouses__container">
@@ -149,7 +155,7 @@ const WarehousesPage = () => {
                                     </div>
 
                                     <div className='warehouses__content--btn'>
-                                        <button className='warehouses__content--btn-delete' onClick={handleModal}><img id={change.id} src={deleteIcon} /></button>
+                                        <button className='warehouses__content--btn-delete' onClick={() => handleModal(change)}><img id={change.id} src={deleteIcon} /></button>
                                         <NavLink className='warehouses__content--btn-edit'><img src={editIcon} /></NavLink>
                                     </div>
 
