@@ -45,6 +45,37 @@ const WarehousesPage = () => {
                             </NavLink>
                     </div>
                 </div>
+
+                        <div className = "warehouses__center--header"> 
+                            
+                            {/* <div className = "warehouse__center--left"></div>
+                            <div className = "warehouse__center--right"></div> */}
+
+                            <div className='warehouses__subtitle--box-location'>
+                                <h4 className='warehouses__subtitle--text'>WAREHOUSE</h4>
+                                <img className='warehouses__subtitle--img' 
+                                src={sortIcon} alt='sort_logo'/>
+                            </div>
+                            <div className='warehouses__subtitle--box-address'>
+                                <h4 className='warehouses__subtitle--text'>ADDRESS</h4>
+                                <img className='warehouses__subtitle--img' 
+                                src={sortIcon} alt='sort_logo'/>
+                            </div>
+                            <div className='warehouses__subtitle--box-name'>
+                                <h4 className='warehouses__subtitle--text'>CONTACT NAME</h4>
+                                <img className='warehouses__subtitle--img' 
+                                src={sortIcon} alt='sort_logo'/>
+                            </div>
+                            <div className='warehouses__subtitle--box-info'>
+                                <h4 className='warehouses__subtitle--text'>CONTACT INFORMATION</h4>
+                                <img className='warehouses__subtitle--img' 
+                                src={sortIcon} alt='sort_logo'/>
+                            </div>
+                            
+                            <h4 className='warehouses__subtitle--text 
+                            warehouses__subtitle--text-action'>ACTIONS</h4>
+
+                        </div>
                 {
                 mapArray.map ((change) => {
                     
@@ -52,13 +83,7 @@ const WarehousesPage = () => {
                     return(
                         // <NavLink to= {`/${change.id}`} key={change.id}/>  
                         <div className= "warehouses__center">
-                            {/* <div className = "warehouse__center--header"> 
-                            
-                            <div className = "warehouse__center--left"></div>
-                            <div className = "warehouse__center--right"></div>
-                            
-                            
-                            </div> */}
+
                             {/*  */}
                             <div className="warehouses__list">
 
