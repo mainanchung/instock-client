@@ -40,6 +40,7 @@ const InventoryFormPage = () => {
         console.log(newInventoryItem); 
         axios.post('http://localhost:8080/inventory', newInventoryItem).then ((res) =>{
             console.log(res.data)
+            //set it to what it is, but adding a new
             setForm([...form, res.data]);
             }).catch((error) => {
             console.log(error);
@@ -64,10 +65,12 @@ const InventoryFormPage = () => {
 
         <div className = "inventory-app">
             <form onSubmit={ (createInventoryItem)} className = "inventory-app__form">
-                <img className="inventory-app__heading-img" src={ArrowBack} 
-                alt="arrow-back" />
-                <div className="inventory-app__header">
-                Add New Inventory</div>
+                <div className = 'inventory-app__heading-box'>
+                    <img className="inventory-app__heading-img" src={ArrowBack} 
+                    alt="arrow-back" />
+                    <h1 className="inventory-app__header">
+                    Add New Inventory</h1>
+                </div> 
                 <div className ="inventory-app__content-container">
                     <section className="inventory-app__content">
                         <h3 className="inventory-app__subheading">
@@ -99,10 +102,18 @@ const InventoryFormPage = () => {
                     <section className = "inventory-app__content">
                         <h3 className="inventory-app__subheading">
                         Item Availability</h3>
-                        <div className=''>
-                        <label className="inventory-app__label" htmlFor="">Status</label>
-                            <input type="radio" name="stock" ref={status} value="In Stock" checked/>In stock
-                            <input type="radio" name="stock" ref={status} value="Out of stock" />Out of stock
+                        <div className='inventory-app__presence'>
+                            <div className='inventory-app__status'>
+                                <label className="inventory-app__label inventory-app__label--change" htmlFor="">Status</label>
+                            </div>
+                            <div className='inventory-app__stock'>
+                                <div className='inventory-app__stock--left'>
+                                    <input type="radio" name="stock" ref={status} value="In Stock" checked/>In stock
+                                </div>
+                                <div className='inventory-app__stock--right'>
+                                    <input type="radio" name="stock" ref={status} value="Out of stock" />Out of stock
+                                </div>
+                            </div>
                         </div>
                         <div className="inventory-app__form-item">
                                 <label className="inventory-app__label" htmlFor="">Quantity</label>

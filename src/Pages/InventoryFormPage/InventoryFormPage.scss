@@ -1,0 +1,50 @@
+.inventory-app{
+
+    background-color: white;
+    border-radius: 0.1875rem;
+    box-shadow: 0px 2px 5px rgb(19 24 44 / 10%);
+    margin: 1rem;
+    padding: 1.25rem;
+
+    &__heading-box{
+        display: flex;
+        align-items: flex-end;
+        border-bottom: solid #BDC5D5 0.1rem;
+        margin: 0 -1.25rem;
+    }
+
+    &__heading-img{
+        height: 100%;
+        margin-bottom: 1.45rem;
+        margin-right: 0.35rem;
+        margin-left: 1rem;
+    }
+
+    &__header{
+        font-size: 1.75rem;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    &__subheading, &__label{
+        text-align: left;
+    }
+
+    &__form-item{
+        display:flex;
+        flex-direction: column;
+    }
+
+    &__presence{
+        display:flex;
+        flex-direction: column;
+    }
+    &__label--change{
+        display:flex; 
+    }
+
+    &__stock{
+        display:flex;
+        justify-content: space-between;
+    }
+}
