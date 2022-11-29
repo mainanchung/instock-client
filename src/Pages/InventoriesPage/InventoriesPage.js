@@ -57,8 +57,11 @@ const InventoriesPage = () => {
                 {inventories.map((item)=>{
                     return(
                         <InventoryList
-                        key={item.id} 
-                        inventoryItem={item}/>
+                            key={item.id} 
+                            inventoryItem={item}
+                            inventories={inventories}
+                            setInventories={setInventories}
+                        />
                         )
                     }) 
                 }

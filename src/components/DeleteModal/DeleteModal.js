@@ -2,14 +2,19 @@ import './DeleteModal.scss'
 import errorIcon from '../../Assets/Icons/close-24px.svg'
 import axios from 'axios'
 
-function DeleteModal({setDeleteModal, deleteUrl, clickedName, database}) {
+function DeleteModal({setDeleteModal, deleteUrl, clickedName, database, inventories, setInventories, deleteInventoryId}) {
 
     const deleteHandler = () => {
-        
         axios.delete(deleteUrl)
         .then((response) =>{
             console.log(response.data)
             setDeleteModal(false)
+            let invClone = [...inventories]
+            console.log(deleteInventoryId)
+            console.log(invClone[0])
+            let filteredInv = invClone.filter(matches => deleteInventoryId !== matches.id)
+            setInventories(filteredInv)
+            console.log(filteredInv)
         })
         .catch((error) => {
             console.log(error)
