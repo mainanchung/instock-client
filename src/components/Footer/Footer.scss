@@ -1,0 +1,16 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/font' as *;
+
+
+.footer{
+    &__img{
+        margin-right: .2rem;
+        height: 1px;
+    }
+    &__content{
+        color: #5C667E;
+        display:flex;
+        justify-content: center;
+    }
+}
