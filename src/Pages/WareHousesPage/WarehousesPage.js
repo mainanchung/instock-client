@@ -16,7 +16,6 @@ const WarehousesPage = () => {
     const [deleteModal, setDeleteModal] = useState(false)
     const [deleteWarehouseUrl, setDeleteWarehouseUrl] = useState("")
     const [clickedWarehouseName, setClickedWarehouseName] = useState("")
-    const [deleteWarehouseId, setDeleteWarehouseId] = useState("")
     const [sortOrder, setSortOrder] = useState(true)
 
     const handleModal = (obj) => {
@@ -113,6 +112,7 @@ const WarehousesPage = () => {
                         </div>
                 {
                     warehouseList.map((change) => 
+                    
                             // <NavLink to= {`/${change.id}`} key={change.id}/>  
                             <div className="warehouses__center">
                             {/* <div className = "warehouse__center--header"> 
@@ -128,11 +128,9 @@ const WarehousesPage = () => {
                                         <div className="warehouses__content--location">
                                             <div className="warehouses__content--where">
                                                 <h4 className=' warehouses__subtitle--mobile'>WAREHOUSE</h4>
-                                                {/* <NavLink className='warehouses__link' to ='/addWarehouse'> */}
-                                                <p className='warehouses__item-text'>{change.city}
-                                                    <img src={arrow} alt="arrow" />
-                                                </p>
-                                                {/* </NavLink> */}
+                                               
+                                                <NavLink to={`/warehouse/${change.id}`}className='warehouses__item-text'> {change.city}<img src={arrow} alt="arrow" />
+                                                </NavLink>
                                             </div>
                                             <div className="warehouses__contect--address">
                                                 <h4 className='warehouses__subtitle--mobile'>ADDRESS</h4>
