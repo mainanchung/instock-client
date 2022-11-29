@@ -82,7 +82,6 @@ function EditInventoryItem({ setEditItem, singleItem }) {
                             id="name"
                             type="text"
                             name="item-name"
-                            placeholder="Television"
                         />
                         <label className="form__label" htmlFor="description">Description</label>
                         <textarea
