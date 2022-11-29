@@ -5,11 +5,31 @@ import "../../Pages/InventoriesPage/InventoriesPage.scss";
 import deleteIcon from '../../Assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../Assets/Icons/edit-24px.svg';
 import arrow from '../../Assets/Icons/chevron_right-24px.svg'
+import { DeleteModal } from '../../components/DeleteModal/DeleteModal';
 
-
-const InventoryList = ({inventoryItem}) =>{
+const InventoryList = ({inventoryItem, key}) =>{
 const {id, item_name, category, status, quantity, warehouse_id} = inventoryItem;
 const [warehouseName, setWarehouseName] = useState("") 
+
+
+const [deleteModal, setDeleteModal] = useState(false)
+const [deleteWarehouseUrl, setDeleteWarehouseUrl] = useState("")
+const [clickedWarehouseName, setClickedWarehouseName] = useState("")
+const [deleteWarehouseId, setDeleteWarehouseId] = useState("")
+const [sortOrder, setSortOrder] = useState(true)
+
+
+
+const handleModal = (e) => {
+    // console.log(obj)
+    e.preventDefault()
+    setClickedWarehouseName(e.target.name)
+    setDeleteWarehouseId(e.target.id)
+    setDeleteWarehouseUrl('http://localhost:8080/inventory/' + id)
+    setDeleteModal(true)
+}
+
+console.log(clickedWarehouseName)
 
 useEffect(() => {
     if(warehouse_id){
@@ -26,6 +46,15 @@ useEffect(() => {
 
 return(
         <div className='inventory__list'>
+            {deleteModal ?
+                <DeleteModal
+                    setDeleteModal={setDeleteModal}
+                    deleteUrl={deleteWarehouseUrl}
+                    clickedName={clickedWarehouseName}
+                    database={"inventory"}
+                    />
+                : ""
+            }
             <div className='inventory__content'>
 
                 <div className='inventory__content--left'>
@@ -61,7 +90,7 @@ return(
             </div>
 
             <div className='inventory__content--btn'>
-                    <NavLink className='inventory__content--btn-delete'><img src={deleteIcon} alt='delete' /></NavLink>
+                    <NavLink className='inventory__content--btn-delete'><img src={deleteIcon} alt='delete' onClick={handleModal} id={key}/></NavLink>
                     <NavLink className='inventory__content--btn-edit'><img src={editIcon} alt='edit'/></NavLink>
             </div>
     </div>

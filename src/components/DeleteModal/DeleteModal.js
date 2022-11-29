@@ -2,7 +2,7 @@ import './DeleteModal.scss'
 import errorIcon from '../../Assets/Icons/close-24px.svg'
 import axios from 'axios'
 
-function DeleteModal({setDeleteModal, deleteUrl,clickedName, database}) {
+function DeleteModal({setDeleteModal, deleteUrl, clickedName, database}) {
 
     const deleteHandler = () => {
         

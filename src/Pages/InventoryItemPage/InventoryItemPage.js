@@ -11,6 +11,7 @@ const InventoryItemPage = () => {
     const [singleItem, setSingleItem] = useState("");
     const [warehouseName, setWarehouseName] = useState("")
     const itemId = useParams().id;
+    console.log(itemId)
     const [editItem, setEditItem] = useState(false)
 
     useEffect(() => {
