@@ -2,11 +2,11 @@ import './DeleteModal.scss'
 import errorIcon from '../../Assets/Icons/close-24px.svg'
 import axios from 'axios'
 
-function DeleteModal({setDeleteModal, deleteWarehouseId}) {
+function DeleteModal({setDeleteModal, deleteUrl,clickedName, database}) {
 
     const deleteHandler = () => {
-        console.log(deleteWarehouseId)
-        axios.delete(`http://localhost:8080/warehouse/${deleteWarehouseId}`)
+        
+        axios.delete(deleteUrl)
         .then((response) =>{
             console.log(response.data)
             setDeleteModal(false)
@@ -27,9 +27,8 @@ function DeleteModal({setDeleteModal, deleteWarehouseId}) {
             <div className="delete-container">
                 <button type="click" className="button__close" onClick={handleCancel} ><img src={errorIcon} alt="error icon" /></button>
                 <div className="delete__header-container">
-                    <h2 className="delete__header">Delete television inventory item?</h2>
-                    <p className="delete__description">Please confirm that you'd like to delete $television
-                        from the inventory list. You won't be able to undo this action.
+                    <h2 className="delete__header">{`Delete ${clickedName} ${database}`}</h2>
+                    <p className="delete__description">Please confirm that you'd like to delete {clickedName} from the {database} list. You won't be able to undo this action.
                     </p>
                     <div className="button__container">
                         <button type="click" onClick={handleCancel} className="button__cancel">Cancel</button>

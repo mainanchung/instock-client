@@ -1,5 +1,5 @@
 import './AddWarehouse.scss'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import ArrowBack from '../../Assets/Icons/arrow_back-24px.svg'
 import axios from 'axios';
 import { useState } from 'react';
@@ -32,12 +32,14 @@ const AddWarehouse = () => {
         });
     }
 
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         setWarehouseAttempt(true)
         if (warehouseValues.warehouse_name && warehouseValues.address && warehouseValues.city && warehouseValues.country && warehouseValues.contact_name && warehouseValues.contact_position && warehouseValues.contact_phone && warehouseValues.contact_email) {
             axios.post('http://localhost:8080/warehouse/', warehouseValues)
-        } 
+        }
+        navigate('/warehouses')
     }
     console.log(warehouseValues)
 
