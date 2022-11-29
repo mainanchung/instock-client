@@ -129,9 +129,7 @@ const WarehousesPage = () => {
                                         <div className="warehouses__content--location">
                                             <div className="warehouses__content--where">
                                                 <h4 className=' warehouses__subtitle--mobile'>WAREHOUSE</h4>
-                                                {/* <p className='warehouses__item-text'>{change.city}
-                                                    <img src={arrow} alt="arrow" />
-                                                </p> */}
+                                               
                                                 <NavLink to={`/warehouse/${change.id}`}className='warehouses__item-text'> {change.city}<img src={arrow} alt="arrow" />
                                                 </NavLink>
                                             </div>
