@@ -16,7 +16,6 @@ const WarehousesPage = () => {
     const [deleteModal, setDeleteModal] = useState(false)
     const [deleteWarehouseUrl, setDeleteWarehouseUrl] = useState("")
     const [clickedWarehouseName, setClickedWarehouseName] = useState("")
-    const [deleteWarehouseId, setDeleteWarehouseId] = useState("")
     const [sortOrder, setSortOrder] = useState(true)
 
     const handleModal = (obj) => {
