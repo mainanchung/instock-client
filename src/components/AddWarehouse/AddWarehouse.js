@@ -49,7 +49,10 @@ const AddWarehouse = () => {
         <div className="add-warehouse">
             <form className="add-warehouse__form" onSubmit={handleSubmit}>
                 <div className="add-warehouse__heading-container">
-                    <img className="add-warehouse__heading-img" src={ArrowBack} alt="arrow-back" />
+                    <NavLink to ="/warehouses">
+                        <img className="add-warehouse__heading-img" src={ArrowBack} alt="arrow-back" />
+                    </NavLink>
+
                     <h1 className="add-warehouse__heading">Add New Warehouse</h1>
                 </div>
                 <div className="add-warehouse__content-container">
