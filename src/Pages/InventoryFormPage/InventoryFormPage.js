@@ -63,7 +63,6 @@ const InventoryFormPage = () => {
      }, [])
 
     return (
-
         <div className = "inventory-app">
             <form onSubmit={ (createInventoryItem)} ref={clickRef} className = "inventory-app__form">
                 <div className = 'inventory-app__heading-box'>
