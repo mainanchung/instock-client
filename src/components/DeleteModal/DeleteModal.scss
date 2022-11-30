@@ -2,6 +2,7 @@
 @use '../../styles/partials/mixins' as *;
 
 .delete {
+    
     @include tablet {
         background-color: rgba(0, 0, 0, 0.75);
         position: fixed;
@@ -17,14 +18,21 @@
     @include desktop{
         align-items: center;
     }
+
+    &__header-container{
+        margin-left: 1rem;
+    }
 }
 
 .delete-container {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right:0px;
     position: fixed;
     display: flex;
     flex-direction: column;
-    margin: 1rem 1rem;
-    height: 40rem;
+    height: 100vh;
     background: $White;
 
     @include tablet {
@@ -49,7 +57,7 @@
     &__container {
         display: flex;
         justify-content: space-around;
-        margin-top: 20rem;
+        margin-top: 50vh;
 
 
         @include tablet {
