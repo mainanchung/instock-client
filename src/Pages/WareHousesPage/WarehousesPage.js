@@ -31,22 +31,19 @@ const WarehousesPage = () => {
             `http://localhost:8080/warehouse`
         ).then((grab) => {
             let warehouseList = grab.data;
-            // displayTheList = warehouseList;
+       
             setWarehouseList(grab.data);
         }).catch((error) => {
             console.log(`Check it over man --> ${error}`);
         })
-        // keep line 26 in your mind in terms of potential errors 
+      
     }, [warehouseList, deleteWarehouseUrl])
 
-    // let displayTheList;
-    // console.log(warehouseList.warehouse_name)
 
     const sortWarehouse = (sortField) => {
-        // When you want a variable, variable name (dynamic variable name) 
-        // You have to put it in brackets to parse
+
         let sortWarehouse 
-        // console.log("test")
+       
         if (sortOrder) {
             sortWarehouse = warehouseList.sort((a, b) => a[sortField].localeCompare(b[sortField])) // localeCompare for alphatical compare
         } else {
@@ -82,9 +79,6 @@ const WarehousesPage = () => {
                 </div>
 
                         <div className = "warehouses__center--header"> 
-                            
-                            {/* <div className = "warehouse__center--left"></div>
-                            <div className = "warehouse__center--right"></div> */}
 
                             <div className='warehouses__subtitle--box-location'>
                                 <h4 className='warehouses__subtitle--text'>WAREHOUSE</h4>
@@ -112,15 +106,8 @@ const WarehousesPage = () => {
 
                         </div>
                 {
-                    warehouseList.map((change) => 
-                            // <NavLink to= {`/${change.id}`} key={change.id}/>  
+                    warehouseList.map((change) =>  
                             <div className="warehouses__center">
-                            {/* <div className = "warehouse__center--header"> 
-                            <div className = "warehouse__center--left"></div>
-                            <div className = "warehouse__center--right"></div>
-                            </div> */}
-                                {/*  */}
-
                                 <div className="warehouses__list">
 
                                     <div className="warehouses__content">
@@ -128,11 +115,11 @@ const WarehousesPage = () => {
                                         <div className="warehouses__content--location">
                                             <div className="warehouses__content--where">
                                                 <h4 className=' warehouses__subtitle--mobile'>WAREHOUSE</h4>
-                                                {/* <NavLink className='warehouses__link' to ='/addWarehouse'> */}
+                                         
                                                 <p className='warehouses__item-text'>{change.city}
                                                     <img src={arrow} alt="arrow" />
                                                 </p>
-                                                {/* </NavLink> */}
+                                            
                                             </div>
                                             <div className="warehouses__contect--address">
                                                 <h4 className='warehouses__subtitle--mobile'>ADDRESS</h4>
