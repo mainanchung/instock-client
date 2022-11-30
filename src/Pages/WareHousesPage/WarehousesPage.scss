@@ -184,6 +184,12 @@
                 background-color: $White;
                 border-style: none;
             }
+
+            &-edit{
+                @include tablet{
+                margin: auto;
+                }
+            }
         }
     }
 
