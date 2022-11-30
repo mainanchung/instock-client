@@ -4,30 +4,9 @@ import axios from 'axios';
 import "../InventoriesPage/InventoriesPage.scss";
 import sortIcon from '../../Assets/Icons/sort-24px.svg';
 import InventoryList from '../../components/InventoryList/InventoryList';
-import { DeleteModal } from '../../components/DeleteModal/DeleteModal';
 
 const InventoriesPage = (id) => {
     const [inventories, setInventories] = useState([])
-
-
-
-    const [deleteModal, setDeleteModal] = useState(false)
-    const [deleteWarehouseUrl, setDeleteWarehouseUrl] = useState("")
-    const [clickedWarehouseName, setClickedWarehouseName] = useState("")
-    const [deleteInventoryId, setDeleteInventoryId] = useState("")
-    const [sortOrder, setSortOrder] = useState(true)
-
-
-
-    const handleModal = (e) => {
-        // console.log(obj)
-        e.preventDefault()
-        setClickedWarehouseName(e.target.name)
-        setDeleteInventoryId(id)
-        setDeleteWarehouseUrl('http://localhost:8080/inventory/' + id)
-        setDeleteModal(true)
-    }
-
 
     useEffect(()=>{
         axios.get('http://localhost:8080/inventory').then((response)=>{
@@ -42,20 +21,6 @@ const InventoriesPage = (id) => {
     return (
         
         <div className='inventory'>
-                {deleteModal ?
-                    <DeleteModal
-                        handleModal={handleModal}
-                        className='inventory-styling'
-                        deleteInventoryId={deleteInventoryId}
-                        setDeleteModal={setDeleteModal}
-                        deleteUrl={deleteWarehouseUrl}
-                        inventories={inventories}
-                        setInventories={setInventories}
-                        clickedName={clickedWarehouseName}
-                        database={"inventory"}
-                        />
-                    : ""
-                }
             <div className='inventory__container'>
                 <div className='inventory__top'>
                     <h1 className='inventory__title'>Inventory</h1>
