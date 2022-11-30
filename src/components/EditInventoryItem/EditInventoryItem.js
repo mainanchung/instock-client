@@ -1,7 +1,6 @@
 import backIcon from '../../Assets/Icons/arrow_back-24px.svg'
 import './EditInventoryItem.scss';
 import { useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 function EditInventoryItem({ setEditItem, singleItem }) {
@@ -9,6 +8,7 @@ function EditInventoryItem({ setEditItem, singleItem }) {
     const formRef = useRef()
     const [warehouses, setWarehouses] = useState([])
     const [stock, setStock] = useState(false)
+    const [categories, setCategories] = useState([])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -31,6 +31,7 @@ function EditInventoryItem({ setEditItem, singleItem }) {
             axios.patch(`http://localhost:8080/inventory/${singleItem[0].id}`, updateObj)
                 .then((response) => {
                     console.log(response)
+                    setEditItem(false)
                 })
                 .catch((error) => {
                     console.log(error)
@@ -58,10 +59,15 @@ function EditInventoryItem({ setEditItem, singleItem }) {
     useEffect(() => {
         axios.get(`http://localhost:8080/warehouse`)
             .then((response) => {
-                console.log(response.data)
                 setWarehouses(response.data)
             })
-
+            .catch((error) => {
+                console.log(error)
+            })
+        axios.get(`http://localhost:8080/inventory/edit`)
+            .then((response) => {
+                setCategories(response.data)
+            })
     }, [])
 
 
@@ -83,7 +89,6 @@ function EditInventoryItem({ setEditItem, singleItem }) {
                             id="name"
                             type="text"
                             name="item-name"
-                            placeholder="Television"
                         />
                         <label className="form__label" htmlFor="description">Description</label>
                         <textarea
@@ -94,11 +99,9 @@ function EditInventoryItem({ setEditItem, singleItem }) {
                             name="description"></textarea>
                         <label className="form__label" htmlFor="category">Category</label>
                         <select className="form__select" name="category" id="category">
-                            <option value="Accessories">Accessories</option>
-                            <option value="Gear">Gear</option>
-                            <option value="Electronics">Electronics</option>
-                            <option value="Health">Health</option>
-                            <option value="Apparel">Apparel</option>
+                            {categories.map((category, index) => {
+                                return <option key={category+index} value={category.category}>{category.category}</option>
+                            })}
                         </select>
                     </div>
                     <div className="form__availability-container">

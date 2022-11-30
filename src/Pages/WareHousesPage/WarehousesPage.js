@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../WarehousesPage/WarehousesPage.scss';
+import './WarehousesPage.scss';
 
 import sortIcon from '../../Assets/Icons/sort-24px.svg';
 import deleteIcon from '../../Assets/Icons/delete_outline-24px.svg';
@@ -12,14 +12,18 @@ import { DeleteModal } from '../../components/DeleteModal/DeleteModal';
 
 const WarehousesPage = () => {
 
-    const [warehouseList, setWareHouseList] = useState([])
+    const [warehouseList, setWarehouseList] = useState([])
     const [deleteModal, setDeleteModal] = useState(false)
+    const [deleteWarehouseUrl, setDeleteWarehouseUrl] = useState("")
+    const [clickedWarehouseName, setClickedWarehouseName] = useState("")
     const [deleteWarehouseId, setDeleteWarehouseId] = useState("")
+    const [sortOrder, setSortOrder] = useState(true)
 
-    const handleModal = (e) => {
-        e.preventDefault()
+    const handleModal = (obj) => {
+        console.log(obj)
+        setClickedWarehouseName(obj.city)
+        setDeleteWarehouseUrl('http://localhost:8080/warehouse/' + obj.id)
         setDeleteModal(true)
-        setDeleteWarehouseId(e.target.id)
     }
 
     useEffect(() => {
@@ -27,13 +31,28 @@ const WarehousesPage = () => {
             `http://localhost:8080/warehouse`
         ).then((grab) => {
             let warehouseList = grab.data;
-            setWareHouseList(warehouseList);
+       
+            setWarehouseList(grab.data);
         }).catch((error) => {
             console.log(`Check it over man --> ${error}`);
         })
-    }, [warehouseList])
+      
+    }, [warehouseList, deleteWarehouseUrl])
 
-    let mapArray = warehouseList;
+
+    const sortWarehouse = (sortField) => {
+
+        let sortWarehouse 
+       
+        if (sortOrder) {
+            sortWarehouse = warehouseList.sort((a, b) => a[sortField].localeCompare(b[sortField])) // localeCompare for alphatical compare
+        } else {
+            sortWarehouse = warehouseList.sort((a, b) => b[sortField].localeCompare(a[sortField]))
+        }
+        console.log(sortWarehouse)
+        setWarehouseList([...sortWarehouse])
+    }
+
 
     return (
 
@@ -41,7 +60,10 @@ const WarehousesPage = () => {
             {deleteModal ?
                 <DeleteModal
                     setDeleteModal={setDeleteModal}
-                    deleteWarehouseId={deleteWarehouseId} />
+                    deleteUrl={deleteWarehouseUrl}
+                    clickedName={clickedWarehouseName}
+                    database={"warehouse"}
+                    />
                 : ""
             }
             <div className="warehouses__container">
@@ -60,7 +82,7 @@ const WarehousesPage = () => {
 
                             <div className='warehouses__subtitle--box-location'>
                                 <h4 className='warehouses__subtitle--text'>WAREHOUSE</h4>
-                                <img className='warehouses__subtitle--img' 
+                                <img onClick={() => {sortWarehouse('warehouse_name'); setSortOrder(!sortOrder)}} className='warehouses__subtitle--img' 
                                 src={sortIcon} alt='sort_logo'/>
                             </div>
                             <div className='warehouses__subtitle--box-address'>
@@ -84,11 +106,8 @@ const WarehousesPage = () => {
 
                         </div>
                 {
-                    mapArray.map((change) => {
-
-                        return (
+                    warehouseList.map((change) =>  
                             <div className="warehouses__center">
-
                                 <div className="warehouses__list">
 
                                     <div className="warehouses__content">
@@ -96,10 +115,11 @@ const WarehousesPage = () => {
                                         <div className="warehouses__content--location">
                                             <div className="warehouses__content--where">
                                                 <h4 className=' warehouses__subtitle--mobile'>WAREHOUSE</h4>
-                                                {/* <NavLink className='warehouses__link' to ='/addWarehouse'> */}
+                                         
                                                 <p className='warehouses__item-text'>{change.city}
-                                                    <img src={arrow} /></p>
-                                                {/* </NavLink> */}
+                                                    <img src={arrow} alt="arrow" />
+                                                </p>
+                                            
                                             </div>
                                             <div className="warehouses__contect--address">
                                                 <h4 className='warehouses__subtitle--mobile'>ADDRESS</h4>
@@ -122,14 +142,13 @@ const WarehousesPage = () => {
                                     </div>
 
                                     <div className='warehouses__content--btn'>
-                                        <button className='warehouses__content--btn-delete' onClick={handleModal}><img id={change.id} src={deleteIcon} /></button>
+                                        <button className='warehouses__content--btn-delete' onClick={() => handleModal(change)}><img id={change.id} src={deleteIcon} /></button>
                                         <NavLink className='warehouses__content--btn-edit'><img src={editIcon} /></NavLink>
                                     </div>
 
                                 </div>
                             </div>
-                        )
-                    })
+                    )
                 }
             </div>
         </div>

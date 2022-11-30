@@ -1,0 +1,44 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/font' as *;
+
+.header{
+    font-family: 'Titillium Web';
+    display: flex;
+    flex-direction: column;
+    background-color: #232940;
+
+    &__title{
+        display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: white;
+        background: #13182C;
+        padding: .6rem 4rem .1rem 4rem;
+        border-radius: 70rem;
+        height: 2rem;
+       
+    }
+
+    &__details{
+        display: flex;
+        justify-content: space-evenly; 
+        color: white;
+        
+        &--item1{
+            margin-top: -.1rem;
+            text-decoration: none;
+            color: white;
+        }
+        
+    }
+
+    &__logo{
+        height: 2.5rem;
+    }
+}

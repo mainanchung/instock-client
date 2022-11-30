@@ -1,21 +1,20 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { EditWarehouse } from './components/EditWarehouse/EditWarehouse';
 import { AddWarehouse } from './components/AddWarehouse/AddWarehouse';
 import { WarehousePage } from './Pages/WarehousePage/WarehousePage';
 import WarehousesPage from './Pages/WarehousesPage/WarehousesPage';
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
 import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
 import InventoryFormPage from './Pages/InventoryFormPage/InventoryFormPage';
-import { DeleteModal } from './components/DeleteModal/DeleteModal';
-import { EditInventoryItem } from './components/EditInventoryItem/EditInventoryItem';
 import { EditInventoryItemPage } from './Pages/EditInventoryItemPage/EditInventoryItemPage';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
         <Routes>
          
           <Route
@@ -47,9 +46,9 @@ function App() {
             element = {<AddWarehouse/>}
           />
         </Routes>
+        <Footer />
       </BrowserRouter>
 
-      {/* <DeleteModal /> */}
       {/* <EditWarehouse />
       <AddWarehouse /> */}
 
