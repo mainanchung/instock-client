@@ -27,16 +27,11 @@ const WarehousesPage = () => {
             `http://localhost:8080/warehouse`
         ).then((grab) => {
             let warehouseList = grab.data;
-            console.log(warehouseList);
-            // displayTheList = warehouseList;
             setWareHouseList(warehouseList);
         }).catch((error) => {
             console.log(`Check it over man --> ${error}`);
         })
-        // keep line 26 in your mind in terms of potential errors 
     }, [warehouseList])
-
-    // let displayTheList;
 
     let mapArray = warehouseList;
 
@@ -62,9 +57,6 @@ const WarehousesPage = () => {
                 </div>
 
                         <div className = "warehouses__center--header"> 
-                            
-                            {/* <div className = "warehouse__center--left"></div>
-                            <div className = "warehouse__center--right"></div> */}
 
                             <div className='warehouses__subtitle--box-location'>
                                 <h4 className='warehouses__subtitle--text'>WAREHOUSE</h4>
@@ -95,16 +87,7 @@ const WarehousesPage = () => {
                     mapArray.map((change) => {
 
                         return (
-                            // <NavLink to= {`/${change.id}`} key={change.id}/>  
                             <div className="warehouses__center">
-                                {/* <div className = "warehouse__center--header"> 
-                            
-                            <div className = "warehouse__center--left"></div>
-                            <div className = "warehouse__center--right"></div>
-                            
-                            
-                            </div> */}
-                                {/*  */}
 
                                 <div className="warehouses__list">
 
