@@ -1,4 +1,4 @@
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import "../../Pages/InventoriesPage/InventoriesPage.scss";
@@ -18,7 +18,7 @@ const InventoryList = ({inventoryItem, key, inventories, setInventories}) =>{
     const [deleteInventoryId, setDeleteInventoryId] = useState("")
     const [sortOrder, setSortOrder] = useState(true)
 
-
+    const navigate = useNavigate()
 
     const handleModal = (e) => {
         // console.log(obj)
@@ -27,6 +27,10 @@ const InventoryList = ({inventoryItem, key, inventories, setInventories}) =>{
         setDeleteInventoryId(id)
         setDeleteWarehouseUrl('http://localhost:8080/inventory/' + id)
         setDeleteModal(true)
+    }
+
+    const handleEdit = (e) => {
+        navigate(`/inventory/${id}`)
     }
 
 
@@ -93,7 +97,7 @@ const InventoryList = ({inventoryItem, key, inventories, setInventories}) =>{
 
                 <div className='inventory__content--btn'>
                         <NavLink className='inventory__content--btn-delete'><img src={deleteIcon} alt='delete' onClick={handleModal} id={key}/></NavLink>
-                        <NavLink className='inventory__content--btn-edit'><img src={editIcon} alt='edit'/></NavLink>
+                        <button className='inventory__content--btn-edit'><img src={editIcon} alt='edit' onClick={handleEdit}/></button>
                 </div>
         </div>
     )
