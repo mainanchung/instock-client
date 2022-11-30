@@ -67,8 +67,10 @@ const InventoryFormPage = () => {
         <div className = "inventory-app">
             <form onSubmit={ (createInventoryItem)} ref={clickRef} className = "inventory-app__form">
                 <div className = 'inventory-app__heading-box'>
+                <NavLink to="/inventories">
                     <img className="inventory-app__heading-img" src={ArrowBack} 
                     alt="arrow-back" />
+                </NavLink>
                     <h1 className="inventory-app__header">
                     Add New Inventory</h1>
                 </div> 
