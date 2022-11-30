@@ -26,7 +26,6 @@ const InventoryFormPage = () => {
             quantity: clickStock,
             status: clickRef.current.stock.value
         }
-        console.log(newInventoryItem); 
 
         const {item_name, description, category, quantity, stock, warehouse_id} = newInventoryItem;
         if(item_name && description && category && quantity && stock !== ""){
