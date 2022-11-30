@@ -1,96 +1,71 @@
 import { NavLink } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import {useRef, useState, useEffect} from 'react';
-// import { useEffect} from 'react';
 import "./InventoryFormPage.scss";  
 import ArrowBack from '../../Assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 
 const InventoryFormPage = () => {
-
     const [form, setForm] = useState([]);
-    const [warehouses, setWarehouses] = useState([]);
-    // const [categories, setCategories] = useState([])
-
     const clickRef = useRef();
-    const warehouse_id = useRef();
-    const item_name = useRef(); 
-    const description = useRef();
-    const category = useRef();
-    const quantity = useRef();
-    const status = useRef();
-   
-
-    //useParams
-
-    // const navigate = useNavigate();
+    const [warehouses, setWarehouses] = useState([]);
+    const [stock, setStock] = useState(false)
 
     const createInventoryItem = (e) => {
         e.preventDefault();
-        // console.log(itemName)
-        // console.log(description.current.value)
-        // console.log(status.current.value)
-        // console.log(quantity.current.value)
-        // console.log(warehouse.current.value)
+
         let clickStock = clickRef.current.quantity.value;
-        if (clickRef.current.status.value === "Out of stock"){
+        if (clickRef.current.stock.value === "Out of Stock"){
             clickStock= 0; 
         }
 
-        let newInventoryItem = {
-            //set uuid
-            warehouse_id: warehouse_id.current.value,
-            item_name: item_name.current.value,
-            description: description.current.value,
-            category: category.current.value,
-            quantity: quantity.current.value,
-            status: status.current.value
+        const newInventoryItem = {
+            warehouse_id:clickRef.current.warehouse_id.value,
+            item_name: clickRef.current.item_name.value,
+            description: clickRef.current.description.value,
+            category: clickRef.current.category.value,
+            quantity: clickStock,
+            status: clickRef.current.stock.value
         }
         console.log(newInventoryItem); 
-        axios.post('http://localhost:8080/inventory', newInventoryItem).then ((res) =>{
-            // console.log(res.data)
-            //set it to what it is, but adding a new
+
+        const {item_name, description, category, quantity, stock, warehouse_id} = newInventoryItem;
+        if(item_name && description && category && quantity && stock !== ""){
+            axios.post('http://localhost:8080/inventory', newInventoryItem).then ((res) =>{
             setForm([...form, res.data]);
             }).catch((error) => {
             console.log(error);
         })
-        warehouse_id.current.value = ''; 
-        item_name.current.value = '';
-        description.current.value = ''; 
-        category.current.value = '';
-        quantity.current.value = ''; 
-        status.current.value = '';
-        
-        
+        }else {
+            alert("Please fill in missing fields")
+        }
 
+        clickRef.current.item_name.value = '';
+        clickRef.current.description.value = ''; 
+        clickRef.current.category.value = '';
+        clickRef.current.quantity.value = ''; 
+        clickRef.current.stockvalue = '';
+    }
+
+    const handleStock = (e) => {
+        if (e.target.value === "Out of Stock") {
+            setStock(false)
+        } if (e.target.value === "In Stock") {
+            setStock(true)
+        }
     }
 
     useEffect(() => {
         axios.get('http://localhost:8080/warehouse').then ((res) => {
-            // console.log(res.data)
             setWarehouses(res.data)
         }).catch((error) => {
             console.log(error);
         })
      }, [])
 
-    //  useEffect(() => {
-    //     axios.get('http://localhost:8080/inventory').then ((res) => {
-    //         // console.log(res.data.category)
-    //         setCategories(res.data)
-    //     }).catch((error) => {
-    //         console.log(error);
-    //     })
-    //  }, [])
-    
-
-
-
     return (
 
         <div className = "inventory-app">
-            <form onSubmit={ (createInventoryItem)} className = "inventory-app__form">
+            <form onSubmit={ (createInventoryItem)} ref={clickRef} className = "inventory-app__form">
                 <div className = 'inventory-app__heading-box'>
                     <img className="inventory-app__heading-img" src={ArrowBack} 
                     alt="arrow-back" />
@@ -105,19 +80,20 @@ const InventoryFormPage = () => {
                             Item Details</h3>
                             <div className = "inventory-app__form-list">
                                 <div className="inventory-app__form-item">
-                                    {/*  */}
+                                    
                                     <label className="inventory-app__label" htmlFor="">Item Name</label>
-                                    <input className="inventory-app__input" ref={item_name}  type="text" placeholder="Item Name"/>
+                                    
+                                    <input id='item_name' className="inventory-app__input" type="text" placeholder="Item Name"/>
                                 </div>
                                 <div className="inventory-app__form-item">
                                     <label className="inventory-app__label" htmlFor="">Description</label>
-                                    <input className="inventory-app__input inventory-app__input--height" ref={description} type="text" 
+                            
+                                    <input className="inventory-app__input inventory-app__input--height" type="text" id="description"
                                     placeholder="Please enter a brief item description..."/>
                                 </div>
                                 <div className="inventory-app__form-item">
-                                        <label className="inventory-app__label" htmlFor="">Category</label>
-
-                                        <select className='inventory-app__scrolling' name="category" ref={category}>                                    
+                                        <label className="inventory-app__label" htmlFor="category">Category</label>
+                                        <select className='inventory-app__scrolling' name='category' id="category">                                    
                                             <option value="Accessories" selected>Accessories</option>
                                             <option value="Apparel">Apparel</option>
                                             <option value="Gear">Gear</option>
@@ -140,41 +116,33 @@ const InventoryFormPage = () => {
                                 </div>
                                 <div className='inventory-app__stock'>
                                     <div className='inventory-app__stock--left'>
-                                        <input type="radio" name="stock" ref={status} value="In Stock" checked/>In stock
+                                        <input type="radio" name="stock"  value="In Stock" onClick={handleStock}/>
+                                        <label>In stock</label>
                                     </div>
                                     <div className='inventory-app__stock--right'>
-                                        <input type="radio" name="stock" ref={status} value="Out of stock" />Out of stock
+                                        <input type="radio" name="stock" value="Out of Stock" onClick={handleStock} />
+                                        <label>Out of stock</label>
                                     </div>
                                 </div>
                             </div>
                             <div className="inventory-app__form-item">
-                                    <label className="inventory-app__label" htmlFor="">Quantity</label>
-                                    <input className="inventory-app__input" ref={quantity} type="text" placeholder="0"/>
+                                    <label className={stock ? "inventory-app__label" : "empty"} htmlFor="quantity">Quantity</label>
+                                    <input type="number" className={stock ? "inventory-app__input" : "empty"} name="quantity" id="quantity"/>
                                 </div>
-                            <div className=''></div>
                                 <div className="inventory-app__form-item">
                                         <label className="inventory-app__label" htmlFor="">Warehouse</label>
-                                        <select className="inventory-app__scrolling" name="category" ref={warehouse_id}>
+                                        <select className="inventory-app__scrolling" id="warehouse_id">
                                             {
                                                 warehouses.map( (item) => {
                                                     return (
-                                                        //key for idenitifcation on the dom b/c they are all different
                                                         <option value={item.id} key = {item.id}>
                                                             {item.warehouse_name}
                                                         </option>
                                                     )
                                                 })
                                             }
-                                            {/* <option value="Manhattan" selected>Manhattan</option>
-                                            <option value="Washington">Washington</option>
-                                            <option value="Jersey">Jersey</option>
-                                            <option value="San Fran">San Fran</option>
-                                            <option value="Santa Monica">Santa Monica</option>
-                                            <option value="Seattle">Seattle</option>
-                                            <option value="Miami">Miami</option> */}
                                         </select>
                                 </div>
-
                         </section>
                     </div>
 

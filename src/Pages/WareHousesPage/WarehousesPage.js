@@ -28,24 +28,19 @@ const WarehousesPage = () => {
     useEffect(() => {
         axios.get(
             `http://localhost:8080/warehouse`
-        ).then((grab) => {
-            let warehouseList = grab.data;
-            // displayTheList = warehouseList;
+        ).then((grab) => {       
             setWarehouseList(grab.data);
         }).catch((error) => {
             console.log(`Check it over man --> ${error}`);
         })
-        // keep line 26 in your mind in terms of potential errors 
+      
     }, [warehouseList, deleteWarehouseUrl])
 
-    // let displayTheList;
-    // console.log(warehouseList.warehouse_name)
 
     const sortWarehouse = (sortField) => {
-        // When you want a variable, variable name (dynamic variable name) 
-        // You have to put it in brackets to parse
+
         let sortWarehouse 
-        // console.log("test")
+       
         if (sortOrder) {
             sortWarehouse = warehouseList.sort((a, b) => a[sortField].localeCompare(b[sortField])) // localeCompare for alphatical compare
         } else {
@@ -81,9 +76,6 @@ const WarehousesPage = () => {
                 </div>
 
                         <div className = "warehouses__center--header"> 
-                            
-                            {/* <div className = "warehouse__center--left"></div>
-                            <div className = "warehouse__center--right"></div> */}
 
                             <div className='warehouses__subtitle--box-location'>
                                 <h4 className='warehouses__subtitle--text'>WAREHOUSE</h4>
@@ -111,10 +103,8 @@ const WarehousesPage = () => {
 
                         </div>
                 {
-                    warehouseList.map((change) => 
-     
+                    warehouseList.map((change) =>  
                             <div className="warehouses__center">
-
                                 <div className="warehouses__list">
 
                                     <div className="warehouses__content">

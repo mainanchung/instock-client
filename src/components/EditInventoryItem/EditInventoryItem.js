@@ -12,6 +12,7 @@ function EditInventoryItem({ setEditItem, singleItem }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
         let stockQuantity = formRef.current.quantity.value
         if (formRef.current.status.value === "Out of stock") {
             stockQuantity = 0;
@@ -107,6 +108,7 @@ function EditInventoryItem({ setEditItem, singleItem }) {
                         <h3 className="form__title">Item Availability</h3>
                         <label className="form__label" htmlFor="status">Status</label>
                         <div className="form__radio-container">
+                            {/* // this is 5 */}
                             <div>
                                 <input type="radio" name="status" value="In stock" onClick={handleStock} />
                                 <label>In stock</label>
