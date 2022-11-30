@@ -1,0 +1,306 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/font' as *;
+
+
+
+
+.warehouses{
+    background:$White;
+    margin:1rem;
+
+        @include tablet{
+        // margin: 2rem;
+         }
+
+
+    &__container{
+        background:$White;
+        box-shadow: 0px 2px 5px 0px #13182C1A;
+        border-radius: 3px;
+        text-align: left;
+        padding-top:1rem ;
+
+        @include tablet{
+            margin:4rem auto ;
+            padding-top:2rem ;
+            
+        }
+        @include desktop{
+           margin:4rem auto ;
+           width: 63.75rem;
+        }
+        
+    }
+
+    &__top{
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem 1.5rem 1rem;
+        // padding: 0 16px 24px 16px; 
+
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+            padding:1rem 2rem;
+            }
+    }
+
+    &__title{
+        font-weight: 600;
+        font-size: 1.75rem;
+        color: $Instock-Black;
+        margin-top: 0.5rem;
+
+    }
+
+    &__function{
+        display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            flex-direction: row;
+            height: 45px;
+            padding-top: 18px;
+        }
+
+        &--click{
+            padding: .59375rem 1rem;
+            border: solid #BDC5D5 .1rem;
+            border-radius: 1.25rem; 
+            font-weight: 500;
+            font-size:1.125rem;
+           
+        }
+
+        &--search{
+            height: 2.25rem;
+            background:$White;
+            border: 1px solid $Cloud;
+            border-radius: 20px;
+            background-image: url('../../Assets/Icons/search-24px.svg');
+            background-repeat: no-repeat;
+            background-position: 95%;
+            padding: 1rem 1rem 1rem 1rem;
+
+            @include tablet{
+            background-position: 94%;
+            padding: 1rem 1rem 1rem 1rem;
+            width: 11.6rem;
+            }
+            @include desktop{
+                width: 17rem;
+            }
+            &::placeholder{
+                font-family: 'Titillium Web';
+                font-weight: 400;
+                font-size: 0.813rem;
+            }
+        } 
+
+        &--btn{
+            @include mobile-primaryBtn;
+            background: #2E66E5;
+            width: 100%;
+            border: none;
+            color: #FFFFFF; 
+            margin-top: 1rem;
+
+            @include tablet{
+                @include table_desck-primaryBtn;
+                margin-top:0rem; 
+                margin-left: 1rem;
+            }
+        }
+    }  
+
+    &__center--header{
+        display:none; 
+        @include tablet{
+            display:flex;
+            padding: 0 2rem;
+            height: 56px;
+            background-color: #F7F8F9;
+            font-weight: 600;
+            font-size: 12px;
+            color: #5C667E;
+            position: relative;
+        }
+    }
+
+    &__subtitle--box-location, &__subtitle--box-address, &__subtitle--box-name,
+    &__subtitle--box-info
+    {
+        display:flex; 
+    }
+
+    &__subtitle--img{
+        width:24px; 
+    }
+
+    &__subtitle--box-location, &__subtitle--box-address{
+        width:10rem;
+    }
+
+    &__subtitle--box-name{
+        width: 12rem;
+    }
+
+    // for contact--name ---> width: 187px/ img --> width:25/24px & margin-left: -75px
+
+
+    &__subtitle--img{
+        width:25px;
+    }
+
+    &__subtitle--text-action{
+        right: 2rem;
+        position: absolute;
+    }
+    
+
+    &__list{
+        display:flex;
+        flex-direction: column;
+        border-top: 1px #BDC5D5 solid;
+        padding: 1rem;
+
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+    }
+    &__content{
+        display:flex;
+        // justify-content: space-between;
+        flex-direction: row;
+
+        &--btn{
+            display: flex;
+            justify-content: space-between;
+            
+            &-delete{
+                background-color: $White;
+                border-style: none;
+            }
+
+            &-edit{
+                @include tablet{
+                margin: auto;
+                }
+            }
+        }
+    }
+
+    // &--location{
+
+    // }
+
+    &__subtitle--mobile{
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: $Slate;
+        margin-bottom: 0%;
+        margin:0; 
+
+        @include tablet{
+            display: none;
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+    }
+
+    &__subtitle--mobile-number{
+        font-weight: 100;
+        margin: 0;
+        font-size: 0.875rem;
+    }
+
+    &__qty-text{
+        margin:0; 
+    }
+
+    &__item-text{
+        font-weight: 600;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        color: #2E66E5;
+        margin-top: 0.4rem;
+        margin-bottom: 1.5rem;
+        text-decoration: none;
+        img{transition: transform 0.2s;}
+        
+        &:hover{
+            img{transform: translateX(4px);}
+        }
+
+        @include tablet{
+            margin:0;
+        }
+    }
+
+    &__category-text, &__qty-text, 
+    &__warehouse-text {
+        /* font-weight: 400; */
+        font-size: 0.875rem;
+        color: hsl(228, 40%, 12%);
+        margin-top: 0.3rem;
+
+        @include tablet{
+            margin:0; 
+        }
+    }
+
+    &__status--name{
+        margin: 0;
+        margin-top:4px;
+        
+    }
+
+    &__content--contact-info{
+        margin-top:1.875rem;
+
+        @include tablet{
+            margin-top:0; 
+        }
+
+        @include desktop{
+            width: 18rem;
+        }
+    }
+    
+    &__subtitle--adjust{
+        margin-top: -3.5px;
+    }
+
+    &__content--location{
+        width:45vw;
+
+        @include tablet{
+            display: flex;
+            width: 19.75rem; 
+        }
+    }
+
+    &__content--contact{
+        @include tablet{
+            display: flex; 
+        }
+    }
+
+    &__content--where{
+        @include tablet{
+            width: 10rem;
+        }
+    }
+
+    &__status--name{
+        width: 12rem;
+    }
+    
+
+}

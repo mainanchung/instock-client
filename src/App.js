@@ -1,17 +1,20 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { EditWarehouse } from './components/EditWarehouse/EditWarehouse'
-import { AddWarehouse } from './components/AddWarehouse/AddWarehouse'
-import { WarehousePage } from './Pages/WarehousePage/WarehousePage'
+import { AddWarehouse } from './components/AddWarehouse/AddWarehouse';
+import { WarehousePage } from './Pages/WarehousePage/WarehousePage';
+import WarehousesPage from './Pages/WarehousesPage/WarehousesPage';
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
 import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
-
+import InventoryFormPage from './Pages/InventoryFormPage/InventoryFormPage';
+import { EditInventoryItemPage } from './Pages/EditInventoryItemPage/EditInventoryItemPage';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
         <Routes>
          
           <Route
@@ -22,19 +25,33 @@ function App() {
             path = '/inventory/:id'
             element = {<InventoryItemPage/>}
           />
-          {/* <Route
+          <Route 
+            path= '/inventory-form'
+            element = {<InventoryFormPage />}
+          />
+          <Route
             path = '/warehouses'
-            element = {<WareHousesPage/>}
-
-          /> */}
+            element = {<WarehousesPage/>}
+          /> 
           <Route
             path= '/warehouse/:id'
             element = {<WarehousePage/>}
+          />
+          <Route
+            path = "/warehouse/:id/edit-inventory"
+            element = {<EditInventoryItemPage/>}
           /> 
+          <Route
+            path= '/add-warehouse'
+            element = {<AddWarehouse/>}
+          />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <EditWarehouse />
-      <AddWarehouse />
+
+      {/* <EditWarehouse />
+      <AddWarehouse /> */}
+
     </div>
   );
 }

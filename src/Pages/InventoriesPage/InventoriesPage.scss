@@ -60,12 +60,18 @@
             align-items: center
             }
 
+        &--link{
+            text-decoration: none;
+        }    
+
         &--btn{
             @include mobile-primaryBtn;
             justify-content: center;
+            width: 100%;
             border: none;
             font-size: 0.813rem;
             margin-top: 1rem;
+            text-decoration: none;
 
             @include tablet{
                 @include table_desck-primaryBtn;
@@ -197,6 +203,10 @@
                     margin: 0 0.8rem;
                 }
             }
+            &-edit{
+                background-color: $White;
+                border-style: none;
+            }
         }    
     }
 
@@ -281,6 +291,15 @@
         color: #2E66E5;
         margin-top: 0.4rem;
         margin-bottom: 1.5rem;
+        transition: transform 3s;
+
+        img{transition: transform 0.2s;}
+        
+        &:hover{
+            img{transform: translateX(4px);}
+        }
+    
+
         &--link{
             text-decoration: none;
         }
@@ -316,6 +335,7 @@
         color: $Red;
         margin-top: 0.5rem;
         width: 5.3rem;
+        text-transform: uppercase;
         @include tablet{
             margin: 0;
             width: 5.75rem;
@@ -335,6 +355,7 @@
         font-size: 0.813rem;
         color: $Green;
         margin-top: 0.5rem;
+        text-transform: uppercase;
         @include tablet{
             margin: 0;
             width: 4rem;
