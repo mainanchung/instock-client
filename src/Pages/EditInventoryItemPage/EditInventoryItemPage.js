@@ -1,9 +1,7 @@
 import { EditInventoryItem } from '../../components/EditInventoryItem/EditInventoryItem'
-import { useParams } from 'react-router-dom'
 
-function EditInventoryItemPage (props) {
+function EditInventoryItemPage () {
 
-    const { id } = useParams ()
     return (
         <>
         <EditInventoryItem />

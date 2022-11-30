@@ -140,7 +140,7 @@ const WarehousesPage = () => {
 
                                     <div className='warehouses__content--btn'>
                                         <button className='warehouses__content--btn-delete' onClick={() => handleModal(change)}><img id={change.id} src={deleteIcon} /></button>
-                                        <NavLink className='warehouses__content--btn-edit'><img src={editIcon} /></NavLink>
+                                        <NavLink to={`/warehouse/${change.id}/edit-warehouse`} className='warehouses__content--btn-edit'><img src={editIcon} /></NavLink>
                                     </div>
 
                                 </div>

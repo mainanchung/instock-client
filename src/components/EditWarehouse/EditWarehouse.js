@@ -2,18 +2,21 @@ import './EditWarehouse.scss'
 import ArrowBack from '../../Assets/Icons/arrow_back-24px.svg'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const EditWarehouse = () => {
 
     // Connect to backend
     // https://dev.to/deboragaleano/how-to-handle-multiple-inputs-in-react-55el
 
+    const id = useParams();
     const [warehouseValues,setWarehouseValues] = useState();
     const [warehouseAttempt,setWarehouseAttempt] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false)
 
+    console.log(id)
     useEffect(() => {
-        axios.get('http://localhost:8080/warehouse/150a36cf-f38e-4f59-8e31-39974207372d')
+        axios.get(`http://localhost:8080/warehouse/${id.id}`)
         .then(res => {
             let data = res.data[0]
 
@@ -50,7 +53,7 @@ const EditWarehouse = () => {
         e.preventDefault();
         setWarehouseAttempt(true)
         if (warehouseValues.warehouse_name && warehouseValues.address && warehouseValues.city && warehouseValues.country && warehouseValues.contact_name && warehouseValues.contact_position && warehouseValues.contact_phone && warehouseValues.contact_email) {
-            axios.patch('http://localhost:8080/warehouse/150a36cf-f38e-4f59-8e31-39974207372d', warehouseValues)
+            axios.patch(`http://localhost:8080/warehouse/${id.id}`, warehouseValues)
         } 
     }
 
