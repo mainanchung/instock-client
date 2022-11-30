@@ -11,15 +11,15 @@ function Warehouse({ warehouse }) {
             <div className="warehouse">
                 <div className="warehouse__title-container">
                     <div className="warehouse__icon-title">
-                        <NavLink to="/warehouses" className="warehouse__back-button">
+                        <NavLink to='/' className="warehouse__back-button">
                         <img src={backIcon} alt="back button"/>
                         </NavLink>
                         <h2 className="warehouse__name">{warehouse_name}</h2>
                     </div>
-                    <button className="warehouse__edit-button">
+                    <NavLink to={`/warehouse/${warehouse[0].id}/edit-warehouse`} className="warehouse__edit-button">
                         <img src={whiteEditIcon} className="warehouse__edit-image" alt="edit"/>
                         <p className="warehouse__button-text">Edit</p>
-                    </button>
+                    </NavLink>
                 </div>
                 <div className="warehouse__about">
                     <div className="warehouse__address">

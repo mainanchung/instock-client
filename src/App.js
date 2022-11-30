@@ -9,6 +9,7 @@ import InventoriesPage  from './Pages/InventoriesPage/InventoriesPage';
 import InventoryItemPage from './Pages/InventoryItemPage/InventoryItemPage';
 import InventoryFormPage from './Pages/InventoryFormPage/InventoryFormPage';
 import { EditInventoryItemPage } from './Pages/EditInventoryItemPage/EditInventoryItemPage';
+import { EditWarehouse } from './components/EditWarehouse/EditWarehouse';
 
 function App() {
   return (
@@ -44,6 +45,10 @@ function App() {
           <Route
             path= '/add-warehouse'
             element = {<AddWarehouse/>}
+          />
+          <Route
+            path= '/warehouse/:id/edit-warehouse'
+            element = {<EditWarehouse/>}
           />
         </Routes>
         <Footer />

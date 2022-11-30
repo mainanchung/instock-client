@@ -49,7 +49,7 @@ function EditInventoryItem({ setEditItem, singleItem }) {
     }
 
     const handleStock = (e) => {
-        if (e.target.value === "Out Of Stock") {
+        if (e.target.value === "Out of stock") {
             setStock(false)
         } if (e.target.value === "In stock") {
             setStock(true)
@@ -108,7 +108,6 @@ function EditInventoryItem({ setEditItem, singleItem }) {
                         <h3 className="form__title">Item Availability</h3>
                         <label className="form__label" htmlFor="status">Status</label>
                         <div className="form__radio-container">
-                            {/* // this is 5 */}
                             <div>
                                 <input type="radio" name="status" value="In stock" onClick={handleStock} />
                                 <label>In stock</label>
