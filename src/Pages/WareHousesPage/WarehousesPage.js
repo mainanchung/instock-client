@@ -16,7 +16,6 @@ const WarehousesPage = () => {
     const [deleteModal, setDeleteModal] = useState(false)
     const [deleteWarehouseUrl, setDeleteWarehouseUrl] = useState("")
     const [clickedWarehouseName, setClickedWarehouseName] = useState("")
-    const [deleteWarehouseId, setDeleteWarehouseId] = useState("")
     const [sortOrder, setSortOrder] = useState(true)
 
     const handleModal = (obj) => {
@@ -29,9 +28,7 @@ const WarehousesPage = () => {
     useEffect(() => {
         axios.get(
             `http://localhost:8080/warehouse`
-        ).then((grab) => {
-            let warehouseList = grab.data;
-       
+        ).then((grab) => {       
             setWarehouseList(grab.data);
         }).catch((error) => {
             console.log(`Check it over man --> ${error}`);
@@ -115,11 +112,11 @@ const WarehousesPage = () => {
                                         <div className="warehouses__content--location">
                                             <div className="warehouses__content--where">
                                                 <h4 className=' warehouses__subtitle--mobile'>WAREHOUSE</h4>
-                                         
+                                                <NavLink className='warehouses__link' to ={`/warehouse/${change.id}`}>
                                                 <p className='warehouses__item-text'>{change.city}
                                                     <img src={arrow} alt="arrow" />
                                                 </p>
-                                            
+                                                </NavLink>
                                             </div>
                                             <div className="warehouses__contect--address">
                                                 <h4 className='warehouses__subtitle--mobile'>ADDRESS</h4>
